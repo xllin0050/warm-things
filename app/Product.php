@@ -28,4 +28,8 @@ class Product extends Model
      */
     protected $fillable = ['type_id', 'name', 'price', 'description', 'img', 'created_at', 'updated_at'];
 
+    public function productType()
+    {
+        return $this->hasOne('App\ProductType','id','type_id');
+    }
 }

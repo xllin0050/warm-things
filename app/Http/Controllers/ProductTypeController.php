@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProductType;
 use Illuminate\Http\Request;
 
 class ProductTypeController extends Controller
@@ -13,7 +14,8 @@ class ProductTypeController extends Controller
      */
     public function index()
     {
-        //
+        $productTypes = ProductType::get();
+        return view('admin.product_type.index',compact('productTypes'));
     }
 
     /**
@@ -23,7 +25,7 @@ class ProductTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.product_type.create');
     }
 
     /**
@@ -34,7 +36,8 @@ class ProductTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        ProductType::create($request->all());
+        return redirect('/admin/product_type');
     }
 
     /**
@@ -56,7 +59,8 @@ class ProductTypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $productType=ProductType::find($id);
+        return view('admin.product_type.edit',compact('productType'));
     }
 
     /**
@@ -68,7 +72,9 @@ class ProductTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $productType=ProductType::find($id);
+        $productType->name=$request->name;
+        return redirect('/admin/product_type');
     }
 
     /**
@@ -79,6 +85,8 @@ class ProductTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productType=ProductType::find($id);
+        $productType->delete();
+        return redirect('/admin/product_type');
     }
 }

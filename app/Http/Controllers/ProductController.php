@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use App\ProductType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -13,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::get();
+        return view('admin.product.index',compact('products'));
     }
 
     /**
@@ -23,7 +28,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $productTypes = ProductType::get();
+        return view('admin.product.create',compact('productTypes'));
     }
 
     /**
@@ -34,7 +40,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::create($request->all());
+        
+        if($request->hasFile('img')){
+            $fileName=Storage::disk('public')->put('/image',$request->file('img'));
+            $product->img=Storage::url($fileName);
+            $product->save();
+        }else{
+            $product->img='/storage/image/no_image.jpg';
+        }
+
+        return redirect('/admin/product');
     }
 
     /**
@@ -56,7 +72,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $productTypes = ProductType::get();
+        return view('admin.product.edit',compact('product','productTypes'));
     }
 
     /**
@@ -68,7 +86,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->type_id = $request->type_id;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+
+        if($request->hasFile('img')){
+            if(file_exists(public_path().$product->img)){
+                File::delete((public_path().$product->img));
+            }
+            $fileName = Storage::disk('public')->put('/image',$request->file('img'));
+            $product->img = storage::url($fileName);
+        }
+
+        $product->save();
+
+        return redirect('/admin/product');
     }
 
     /**
@@ -79,6 +113,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+        return redirect('/admin/product');
     }
 }
