@@ -53,6 +53,12 @@
                             <a class="dropdown-item" href="/admin/product_type">新品上市</a>
                             </div>
                         </div>
+                        {{-- 媒體報導 --}}
+                        <div class="btn-group ml-2">
+                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
+                                媒體報導
+                            </button>
+                        </div>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
