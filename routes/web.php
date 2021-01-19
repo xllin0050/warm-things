@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/product','FrontController@product');
+
 Auth::routes();
 
 
@@ -26,7 +28,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
     Route::group(['prefix'=>'product'],function(){
-        Route::get('/','ProductController@index');
+        Route::get('/','ProductController@index')->name('product');
         Route::get('/create','ProductController@create');
         Route::post('/store','ProductController@store');
         Route::get('/edit/{id}','ProductController@edit');
@@ -53,8 +55,3 @@ Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
     });
 
 });
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
