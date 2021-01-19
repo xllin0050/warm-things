@@ -43,11 +43,11 @@ class ProductController extends Controller
         $product = Product::create($request->all());
         
         if($request->hasFile('img')){
-            $fileName=Storage::disk('public')->put('/image',$request->file('img'));
+            $fileName=Storage::disk('public')->put('/images/product',$request->file('img'));
             $product->img=Storage::url($fileName);
             $product->save();
         }else{
-            $product->img='/storage/image/no_image.jpg';
+            $product->img='/storage/images/no_image.jpg';
         }
 
         return redirect('/admin/product');
@@ -96,7 +96,7 @@ class ProductController extends Controller
             if(file_exists(public_path().$product->img)){
                 File::delete((public_path().$product->img));
             }
-            $fileName = Storage::disk('public')->put('/image',$request->file('img'));
+            $fileName = Storage::disk('public')->put('/images/product',$request->file('img'));
             $product->img = storage::url($fileName);
         }
 
