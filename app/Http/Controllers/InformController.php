@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Inform;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class InformController extends Controller
 {
@@ -13,7 +16,8 @@ class InformController extends Controller
      */
     public function index()
     {
-        //
+        $informs =Inform::get();
+        return view('admin.inform.index',compact('informs'));
     }
 
     /**
@@ -23,7 +27,7 @@ class InformController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.inform.create');
     }
 
     /**
@@ -34,7 +38,16 @@ class InformController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inform = Inform::create($request->all());
+
+        if($request->hasFile('img')){
+            $fileName=Storage::disk('public')->put('/images/inform',$request->file('img'));
+            $inform->img=Storage::url($fileName);
+            $inform->save();
+        }else{
+            $inform->img='/storage/image/no_image.jpg';
+        }
+        return redirect('/admin/inform');
     }
 
     /**
@@ -56,7 +69,8 @@ class InformController extends Controller
      */
     public function edit($id)
     {
-        //
+        $inform = Inform::find($id);
+        return view('admin.inform.edit',compact('inform'));
     }
 
     /**
@@ -68,7 +82,23 @@ class InformController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inform = Inform::find($id);
+        $inform->title = $request->title;
+        $inform->openingDate=$request->openingDate;
+        $inform->closingDate=$request->closingDate;
+        $inform->content=$request->closingDate;
+
+        if($request->hasFile('img')){
+            if(file_exists(public_path().$inform->img)){
+                File::delete((public_path().$inform->img));
+            }
+            $fileName = Storage::disk('public')->put('/images/inform',$request->file('img'));
+            $inform->img = storage::url($fileName);
+        }
+
+        $inform->save();
+
+        return redirect('/admin/inform');
     }
 
     /**
@@ -79,6 +109,8 @@ class InformController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $inform = Inform::find($id);
+        $inform->delete();
+        return redirect('/admin/inform');
     }
 }
