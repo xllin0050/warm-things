@@ -43,5 +43,18 @@ Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
         Route::get('/destroy/{id}','ProductTypeController@destroy');
     });
 
+    Route::group(['prefix'=>'inform'],function(){
+        Route::get('/','InformController@index');
+        Route::get('/create','InformController@create');
+        Route::post('/store','InformController@store');
+        Route::get('/edit/{id}','InformController@edit');
+        Route::post('/update/{id}','InformController@update');
+        Route::get('/destroy/{id}','InformController@destroy');
+    });
+
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

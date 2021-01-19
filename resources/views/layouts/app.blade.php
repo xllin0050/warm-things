@@ -33,14 +33,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <!-- Example single danger button -->
-                        <div class="btn-group">
+                        <!-- 產品管理 -->
+                        <div class="btn-group ml-2">
                             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 商品管理
                             </button>
                             <div class="dropdown-menu">
                             <a class="dropdown-item" href="/admin/product">商品列表</a>
                             <a class="dropdown-item" href="/admin/product_type">商品分類</a>
+                            </div>
+                        </div>
+                        <!-- 消息管理 -->
+                        <div class="btn-group ml-2">
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                消息管理
+                            </button>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/admin/product">展覽公告</a>
+                            <a class="dropdown-item" href="/admin/product_type">新品上市</a>
                             </div>
                         </div>
                     </ul>
