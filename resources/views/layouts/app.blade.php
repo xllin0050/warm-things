@@ -49,8 +49,18 @@
                                 消息管理
                             </button>
                             <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/admin/product">展覽公告</a>
+                            <a class="dropdown-item" href="/admin/inform">展覽公告</a>
                             <a class="dropdown-item" href="/admin/product_type">新品上市</a>
+                            </div>
+                        </div>
+                        <!-- 訂單管理 -->
+                        <div class="btn-group ml-2">
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                訂單管理
+                            </button>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/admin/inform">訂單總覽</a>
+                            <a class="dropdown-item" href="/admin/product_type">??</a>
                             </div>
                         </div>
                     </ul>

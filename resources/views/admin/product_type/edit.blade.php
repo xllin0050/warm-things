@@ -10,7 +10,7 @@
         @csrf
         <div class="form-group">
             <label for="name">名稱</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="name" name="name" value="{{$productType->name}}">
         </div>
         <button type="submit" class="btn btn-primary">送出</button>
         </form>

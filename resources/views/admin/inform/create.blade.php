@@ -35,8 +35,8 @@
         </div> --}}
 
         <div class="form-group">
-            <label for="description">內文</label>
-            <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+            <label for="content">內文</label>
+            <textarea class="form-control" id="content" rows="3" name="content"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">送出</button>

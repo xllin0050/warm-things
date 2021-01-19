@@ -74,6 +74,7 @@ class ProductTypeController extends Controller
     {
         $productType=ProductType::find($id);
         $productType->name=$request->name;
+        $productType->save();
         return redirect('/admin/product_type');
     }
 
