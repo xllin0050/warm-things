@@ -24,6 +24,11 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    public function showAdminRegistrationForm()
+    {
+        return view('auth.admin.register');
+    }
+
     /**
      * Where to redirect users after registration.
      *
