@@ -19,17 +19,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test',function(){
-    dd("test");
-})->middleware('is.admin');
-
 Auth::routes();
-
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/admin/login', 'UserController@showAdminLoginForm');
 
 Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
+    Route::get('/reg', 'UserController@showAdminRegistrationForm');
+    Route::post('/reg', 'UserController@adminRegister');
+});
+
+
+Route::group(['middleware'=>['auth','is.admin'],'prefix'=>'admin'],function(){
+    
+    Route::get('/', 'UserController@index');
+    // Route::get('/reg', 'UserController@showAdminRegistrationForm');
+    // Route::post('/reg', 'UserController@adminRegister');
+
     Route::group(['prefix'=>'product'],function(){
         Route::get('/','ProductController@index');
         Route::get('/create','ProductController@create');

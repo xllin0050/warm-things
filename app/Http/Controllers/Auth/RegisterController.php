@@ -24,11 +24,6 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    public function showAdminRegistrationForm()
-    {
-        return view('auth.admin.register');
-    }
-
     /**
      * Where to redirect users after registration.
      *
@@ -44,6 +39,11 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('front.register');
     }
 
     /**

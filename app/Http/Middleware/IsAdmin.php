@@ -20,6 +20,10 @@ class IsAdmin
         
         $role = $user->type;
 
+        // if(!$user){
+        //     return redirect('/admin/login');
+        // }
+
         if($role != 'admin'){
             return redirect('/');
         }else{
