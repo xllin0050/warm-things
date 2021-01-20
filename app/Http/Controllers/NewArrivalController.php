@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Report;
+use App\NewArrival;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class ReportController extends Controller
+class NewArrivalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,8 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $reports= Report::get();
-        return view('admin.report.index',compact('reports'));
-
+        $newArrivals= NewArrival::get();
+        return view('admin.new_arrival.index',compact('newArrivals'));
     }
 
     /**
@@ -27,8 +25,8 @@ class ReportController extends Controller
      */
     public function create()
     {
-        $reports = Report::get();
-        return view('admin.report.create', compact('reports'));
+        $newArrivals = NewArrival::get();
+        return view('admin.new_arrival.create', compact('newArrivals'));
     }
 
     /**
@@ -39,13 +37,8 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        $fileName = Storage::disk('public')->put('/image/report', $request->file('img'));
-        $reports=Report::create($request->all());
-        $reports->img = storage::url($fileName);
-        $reports->save();
-        return redirect('/admin/report');
+        NewArrival::create($request->all());
+        return redirect('/admin/new_arrival');
     }
 
     /**
@@ -67,8 +60,8 @@ class ReportController extends Controller
      */
     public function edit($id)
     {
-        $reports = Report::find($id);
-        return view('admin.report.edit',compact('reports'));
+        $newArrivals = NewArrival::find($id);
+        return view('admin.new_arrival.edit',compact('newArrivals'));
     }
 
     /**
@@ -80,18 +73,14 @@ class ReportController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $reports=Report::find($id);
-        $reports->title = $request->title;
-        $reports->date = $request->date;
-        $reports->content = $request->content;
-        $reports->img = $request->img;
+        $newArrivals=NewArrival::find($id);
+        $newArrivals->title = $request->title;
+        $newArrivals->date = $request->date;
+        $newArrivals->content = $request->content;
+        $newArrivals->img = $request->img;
+        $newArrivals->save();
 
-        $fileName = Storage::disk('public')->put('/image/report', $request->file('img'));
-        $reports->img = storage::url($fileName);
-        $reports->save();
-        $reports->save();
-
-        return redirect('/admin/report');
+        return redirect('/admin/new_arrival');
     }
 
     /**
@@ -102,8 +91,9 @@ class ReportController extends Controller
      */
     public function destroy($id)
     {
-        $reports=Report::find($id);
-        $reports->delete();
-        return redirect('admin/report');
+        $newArrivals=NewArrival::find($id);
+        $newArrivals->delete();
+        return redirect('admin/new_arrival');
+
     }
 }

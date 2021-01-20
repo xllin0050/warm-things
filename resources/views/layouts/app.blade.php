@@ -50,13 +50,13 @@
                             </button>
                             <div class="dropdown-menu">
                             <a class="dropdown-item" href="/admin/product">展覽公告</a>
-                            <a class="dropdown-item" href="/admin/product_type">新品上市</a>
+                            <a class="dropdown-item" href="/admin/new_arrival">新品上市</a>
                             </div>
                         </div>
                         {{-- 媒體報導 --}}
                         <div class="btn-group ml-2">
                             <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
-                                媒體報導
+                            <a href="/admin/report">媒體報導</a>
                             </button>
                         </div>
                     </ul>
