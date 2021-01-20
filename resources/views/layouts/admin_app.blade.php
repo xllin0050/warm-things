@@ -49,7 +49,7 @@
                                 消息管理
                             </button>
                             <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/admin/product">展覽公告</a>
+                            <a class="dropdown-item" href="/admin/inform">展覽公告</a>
                             <a class="dropdown-item" href="/admin/product_type">新品上市</a>
                             </div>
                         </div>

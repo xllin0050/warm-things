@@ -19,16 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/product','FrontController@product');
-
 Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
     Route::group(['prefix'=>'product'],function(){
-        Route::get('/','ProductController@index')->name('product');
+        Route::get('/','ProductController@index');
         Route::get('/create','ProductController@create');
         Route::post('/store','ProductController@store');
         Route::get('/edit/{id}','ProductController@edit');
@@ -52,6 +51,16 @@ Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
         Route::get('/edit/{id}','InformController@edit');
         Route::post('/update/{id}','InformController@update');
         Route::get('/destroy/{id}','InformController@destroy');
+    });
+
+
+    Route::group(['prefix'=>'report'],function(){
+        Route::get('/','ReportController@index');
+        Route::get('/create','ReportController@create');
+        Route::post('/store','ReportController@store');
+        Route::get('/edit/{id}','ReportController@edit');
+        Route::post('/update/{id}','ReportController@update');
+        Route::get('/destroy/{id}','ReportController@destroy');
     });
 
 });
