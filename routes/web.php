@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('test',function(){
+    dd("test");
+})->middleware('is.admin');
+
 Auth::routes();
 
 
