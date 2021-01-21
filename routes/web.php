@@ -63,4 +63,14 @@ Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
         Route::get('/destroy/{id}','ReportController@destroy');
     });
 
+
+    Route::group(['prefix'=>'new_arrival'],function(){
+        Route::get('/','NewArrivalController@index');
+        Route::get('/create','NewArrivalController@create');
+        Route::post('/store','NewArrivalController@store');
+        Route::get('/edit/{id}','NewArrivalController@edit');
+        Route::post('/update/{id}','NewArrivalController@update');
+        Route::get('/destroy/{id}','NewArrivalController@destroy');
+    });
+
 });

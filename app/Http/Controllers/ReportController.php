@@ -89,7 +89,7 @@ class ReportController extends Controller
         $fileName = Storage::disk('public')->put('/image/report', $request->file('img'));
         $reports->img = storage::url($fileName);
         $reports->save();
-        $reports->save();
+       
 
         return redirect('/admin/report');
     }

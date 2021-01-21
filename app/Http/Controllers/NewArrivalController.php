@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\NewArrival;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class NewArrivalController extends Controller
 {
@@ -37,8 +38,13 @@ class NewArrivalController extends Controller
      */
     public function store(Request $request)
     {
-        NewArrival::create($request->all());
+        $fileName = Storage::disk('public')->put('/image/new_arrival', $request->file('img'));
+
+        $newArrivals= NewArrival::create($request->all());
+        $newArrivals->img = storage::url($fileName);
+        $newArrivals->save();
         return redirect('/admin/new_arrival');
+
     }
 
     /**
@@ -78,6 +84,9 @@ class NewArrivalController extends Controller
         $newArrivals->date = $request->date;
         $newArrivals->content = $request->content;
         $newArrivals->img = $request->img;
+
+        $fileName = Storage::disk('public')->put('/image/new_arrival', $request->file('img'));
+        $newArrivals->img = storage::url($fileName);
         $newArrivals->save();
 
         return redirect('/admin/new_arrival');
