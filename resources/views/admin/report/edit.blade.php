@@ -50,33 +50,5 @@
 @endsection
 
 @section('js')
-{{-- <script>
-    // 取得刪除鈕的元素
-    var del_btns=document.querySelectorAll('.del_btn');
-    // 綁定監聽事件
-    del_btns.forEach(function(del_btn){
-        del_btn.onclick = function(){
-            var id=this.getAttribute('data-id');
-            var _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-            var formData = new FormData();
-            formData.append('id',id);
-            formData.append('_token=',_token);
-
-
-            fetch('/admin/product/delete_img', {
-            method: 'POST',
-            body: formData,
-            // Other setting you need
-            // Don't set 'Content-Type': 'multipart/form-data'
-            })
-            .then(response =>this.parentElement.remove())
-
-            .catch(error => console.error('Error:',error));
-                // Handle error here.
-        }
-
-    });
-
-</script> --}}
 @endsection

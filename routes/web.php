@@ -24,6 +24,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/add_cart','ShoppingCartController@addCart');
+
+Route::get('/front/product/product_detail/{id}','ShoppingCartController@test');
+
 
 Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
     Route::group(['prefix'=>'product'],function(){
