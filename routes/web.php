@@ -23,19 +23,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin/login', 'UserController@showAdminLoginForm');
-
-Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
-    Route::get('/reg', 'UserController@showAdminRegistrationForm');
-    Route::post('/reg', 'UserController@adminRegister');
-});
-
-
 Route::group(['middleware'=>['auth','is.admin'],'prefix'=>'admin'],function(){
     
-    Route::get('/', 'UserController@index');
-    // Route::get('/reg', 'UserController@showAdminRegistrationForm');
-    // Route::post('/reg', 'UserController@adminRegister');
+    Route::get('/', 'UserRegController@index');
+    
+    Route::get('/reg', 'UserRegController@showAdminRegistrationForm');
+    Route::post('/reg', 'UserRegController@adminRegister')->name('adminRegister');
 
     Route::group(['prefix'=>'product'],function(){
         Route::get('/','ProductController@index');
