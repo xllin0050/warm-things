@@ -24,7 +24,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/checkout', 'FrontController@checkout');
+
 Route::post('/add_cart','ShoppingCartController@addCart');
+
+Route::post('/del_cart','ShoppingCartController@delCart');
+
+Route::post('/update_cart','ShoppingCartController@updateCart');
 
 Route::get('/front/product/product_detail/{id}','ShoppingCartController@test');
 

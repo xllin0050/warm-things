@@ -9,7 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="/css/04-product_detail.css">
+    <link rel="stylesheet" href="{{ asset('css/product_detail.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
 
     </style>
@@ -26,12 +27,20 @@
                     Tail掛布</span>
             </div>
 
+            <a href="/checkout">
+                <i class="fas fa-shopping-cart shopping_cart">
+                    <?php
+                    $getTotalQty=\Cart::getTotalQuantity();?>
+                    <div class="qty">{{$getTotalQty}}</div>
+                </i>
+            </a>
+
             <div class="product_info">
                 <div class="product_img_wrap">
                     <img src={{$products->img}} alt="">
                 </div>
                 <div class="product_selection">
-                    <div class="product_title">{{$products->title}}</div>
+                    <div class="product_title">{{$products->name}}</div>
                     <div class="product_price"><span>{{$products->price}}</span></div>
                     <div class="product_thumbnail item">
                         <img src="./img/04-product_detail/Warmgrey Tail 生活設計展-1 布商品.jpg" alt="產品縮圖">
@@ -46,13 +55,14 @@
                         </div>
                     </div>
                     <div class="addchart">
-                        <input type="button" data-id="{{$products->id}}" value="加入購物車">
+                        <input type="button" class="addchart_btn" data-id="{{$products->id}}" value="加入購物車">
+
                     </div>
                     <div class="note">付款後，從備貨到寄出商品為3個工作天(不包含假日)</div>
                 </div>
             </div>
             <div class="product_introduction">
-                <div class="content_title">{{$products->content}}</div>
+                <div class="content_title">{{$products->description}}</div>
                 <div class="product_content">
                     Warmgrey Tail是一個來自韓國新進的設計品牌<br>
                     根據其自然風格的插圖創作各種商品<br>
@@ -80,11 +90,12 @@
 
     <script>
 
-var addCartBtn = document.querySelector('.addchart');
+var addCartBtn = document.querySelector('.addchart_btn');
 
     addCartBtn.onclick = function(){
 
         var id=this.getAttribute('data-id');
+
 
         var _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -102,19 +113,20 @@ var addCartBtn = document.querySelector('.addchart');
             return response.text()
         })
 
-
         .then(function(data){
-            console.log('成功',data);
-            if(data == "false"){
-                alert('找不到該項商品');
-            }
-            else{
-                $('.shopping_cart .qty').text(data);
-            }
-        })
+                console.log('成功',data);
+
+                if(data == "false"){
+                    alert('找不到該項商品');
+                }
+                else{
+                    $('.shopping_cart .qty').text(data);
+                }
+            })
         .catch(function(error){
-            console.log('錯誤',error);
+                console.log('錯誤',error);
         });
+
 
 
     };

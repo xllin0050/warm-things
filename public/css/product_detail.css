@@ -21,6 +21,32 @@ main .wrap {
   background-color: #F6F6F5;
 }
 
+
+.shopping_cart{
+    color:rgb(105, 103, 103);
+    font-size: 48px;
+    position: fixed;
+    right: 40px;
+    bottom: 30vh;
+}
+
+.shopping_cart .qty{
+    position: absolute;
+    color: #000;
+    width:35px;
+    height: 35px;
+    border: 2px solid rgb(105, 103, 103);
+    border-radius: 50%;
+    background: #FFF;
+    font-size: 16px;
+    top:0;
+    right: 0;
+    transform: translate(40%,-40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 @media screen and (max-width: 1500px) {
   main .wrap {
     width: 86%;

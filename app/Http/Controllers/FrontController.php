@@ -12,4 +12,11 @@ class FrontController extends Controller
         $products = Product::get();
         return view('front.product.test_index',compact('products'));
     }
+
+    public function checkout()
+    {
+        $carts=\Cart::getContent();
+        return view('front.checkout.index',compact('carts'));
+    }
+
 }
