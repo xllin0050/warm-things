@@ -28,7 +28,7 @@
 
 <body>
     <main>
-        <form action="/member/{{$user->id}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route ('account', $user->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
         <div class="container">
             <div class="account_detail_title font-size-big">帳戶詳細資料</div>
@@ -85,7 +85,29 @@
                             <input type="text" class="form-control" id="inputPhone" name="phone">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">儲存更改</button>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        儲存編輯
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">是否確定更改資料？</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary">確定</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
                 </form>
             </section>
             <hr>
@@ -100,13 +122,40 @@
                         <div class="col-1 font-weight">總計</div>
                         <div class="font-weight">動作</div>
                       </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      {{-- @foreach ($orders as $order) --}}
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="col-3">#96409#96409</div>
                         <div class="col-3">2021-01-18</div>
                         <div class="col-2">NT$99999</div>
                         <button type="button" class="btn btn-primary">展開</button>
-                    </li>
-                    
+
+                        {{-- <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Launch demo modal
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                ...
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div> --}}
+                     </li>
+                      {{-- @endforeach --}}
                   </ul>
             </section>
             <hr>

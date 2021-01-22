@@ -23,10 +23,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function(){
-    Route::get('/{id}','MemberController@index')->name('userID');
-    Route::post('/{id}','MemberController@update');
-   
+Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function($id){
+        Route::get('/{id?}','MemberController@index')->name('account');
+        Route::post('/{id?}','MemberController@update');
+    
+
+
+    
+    
 
 });
 
