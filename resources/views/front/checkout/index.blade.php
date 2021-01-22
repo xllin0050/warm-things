@@ -75,7 +75,7 @@
   </div>
 </div>
 
-<a href="/create_order" class="checkout">Checkout</a>
+<a href="/create_order" class="checkout">結帳</a>
 
 </div>
 
