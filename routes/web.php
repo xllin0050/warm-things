@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,14 +24,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function($id){
+Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function(){
         Route::get('/{id?}','MemberController@index')->name('account');
         Route::post('/{id?}','MemberController@update');
-    
-
-
-    
-    
+        // Route::post('/','MemberController@error');
+        // return redirect()->route('account',[$id]);
 
 });
 

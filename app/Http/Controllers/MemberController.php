@@ -27,4 +27,6 @@ class MemberController extends Controller
 
         return back();
     }
+
+
 }
