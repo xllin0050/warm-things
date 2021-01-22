@@ -23,10 +23,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function(){
+    Route::get('/{id}','MemberController@index')->name('userID');
+    Route::post('/{id}','MemberController@update');
+   
+
+});
+
 Route::group(['middleware'=>['auth','is.admin'],'prefix'=>'admin'],function(){
     
     Route::get('/', 'UserRegController@index');
-    
     Route::get('/reg', 'UserRegController@showAdminRegistrationForm');
     Route::post('/reg', 'UserRegController@adminRegister')->name('adminRegister');
 
