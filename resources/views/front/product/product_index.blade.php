@@ -19,18 +19,16 @@
             <div class="content_wrap">
                 <div class="deraction_img"></div>
                 <div class="product_type">
+
                     @foreach ($productTypes as $productType)
-                    <span class="btn" data-id="{{$productType->id}}">{{$productType->name}}</span>
+                    <label  action="/product/{{$productType->id}}" method="POST"><span >{{$productType->name}}</span></label>
+                    @csrf
                     @endforeach
                 
-                    {{-- <span>餐盤器皿</span>
-                    <span>日式器皿</span>
-                    <span>其他</span> --}}
                 </div>
-                <div class="card_wrap">
+                <div id="#productItems" class="card_wrap">
                     @foreach ($products as $product)
-                    
-                    <div class="product_card">
+                    <div class="product_card" id="{{$product->type_id}}">
                         <div class="card_img" style="background-image: url('{{$product->img}}')"></div>
                         <div class="product_body">
                             <h2 class="prduct_title"><a href="">【{{$product->name}}】</a></h2>
@@ -38,50 +36,41 @@
                         </div>
                     </div>
                     @endforeach
-                    {{-- <div class="product_card">
-                        <div class="card_img" style="background-image: url('../img/04-product_index/古董輪狀系卷.jpg')"></div>
-                        <div class="product_body">
-                            <h2 class="prduct_title"><a href="">【Warmgrey Tail杯子】</a></h2>
-                            <p class="product_price">售價$550</p>
-                        </div>
-                    </div>
-                    <div class="product_card">
-                        <div class="card_img" style="background-image: url('../img/04-product_index/古董輪狀系卷.jpg')"></div>
-                        <div class="product_body">
-                            <h2 class="prduct_title"><a href="">【Warmgrey Tail杯子】</a></h2>
-                            <p class="product_price">售價$550</p>
-                        </div>
-                    </div>
-                    <div class="product_card">
-                        <div class="card_img" style="background-image: url('../img/04-product_index/古董輪狀系卷.jpg')"></div>
-                        <div class="product_body">
-                            <h2 class="prduct_title"><a href="">【Warmgrey Tail杯子】</a></h2>
-                            <p class="product_price">售價$550</p>
-                        </div>
-                    </div>
-                    <div class="product_card">
-                        <div class="card_img" style="background-image: url('../img/04-product_index/古董輪狀系卷.jpg')"></div>
-                        <div class="product_body">
-                            <h2 class="prduct_title"><a href="">【Warmgrey Tail杯子】</a></h2>
-                            <p class="product_price">售價$550</p>
-                        </div>
-                    </div>
-                    <div class="product_card">
-                        <div class="card_img" style="background-image: url('../img/04-product_index/古董輪狀系卷.jpg')"></div>
-                        <div class="product_body">
-                            <h2 class="prduct_title"><a href="">【Warmgrey Tail杯子】</a></h2>
-                            <p class="product_price">售價$550</p>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </section>
     </main>
 
     <script>
-        var productCard = document.querySelector('.card_wrap')
-        var btns = document.querySelectorAll('.btn')
+        // var productCard = $('#productItems');
 
+        // console.log(productCard);
+        // var btns = document.querySelectorAll('.btn')
+        
+
+        
+
+        // btns.forEach(btn => {
+        //     btn.onclick = function(){
+        //         innerFunction(btn.dataset.tag)
+        //     }
+        // });
+
+        // function innerFunction(i){
+        //     let img = {!!$product->img!!}
+            
+        //     productCard.innerHTML +=`
+        //         @foreach ($products as $product)
+        //             <div class="product_card">
+        //                 <div class="card_img" style="background-image: url('${img}')"></div>
+        //                 <div class="product_body">
+        //                     <h2 class="product_title"><a href="">【${i.{{$product->name}}}】</a></h2>
+        //                     <p class="product_price">售價${i.{{$product->price}}}</p>
+        //                 </div>
+        //             </div>
+        //         @endforeach
+        //     `
+        // }
     </script>
 </body>
 

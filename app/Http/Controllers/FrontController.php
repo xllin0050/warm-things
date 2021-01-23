@@ -16,6 +16,13 @@ class FrontController extends Controller
         return view('front.product.product_index',compact('products','productTypes'));
     }
 
+    public function productType($type_id)
+    {
+        $products = Product::find($type_id);
+        $productTypes = ProductType::get();
+        return view('front.product.product_index',compact('products','productTypes'));
+    }
+
     public function checkout()
     {
         $carts=\Cart::getContent();
