@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,22 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function(){
+        Route::get('/{id?}','MemberController@index')->name('account');
+        Route::post('/{id?}','MemberController@update');
+        // Route::post('/','MemberController@error');
+        // return redirect()->route('account',[$id]);
+
+});
+
+Route::group(['middleware'=>['auth','is.admin'],'prefix'=>'admin'],function(){
+    
+    Route::get('/', 'UserRegController@index');
+    Route::get('/reg', 'UserRegController@showAdminRegistrationForm');
+    Route::post('/reg', 'UserRegController@adminRegister')->name('adminRegister');
 
 Route::get('/checkout', 'FrontController@checkout');
 
@@ -35,7 +50,7 @@ Route::post('/update_cart','ShoppingCartController@updateCart');
 Route::get('/front/product/product_detail/{id}','ShoppingCartController@test');
 
 
-Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
+
     Route::group(['prefix'=>'product'],function(){
         Route::get('/','ProductController@index');
         Route::get('/create','ProductController@create');

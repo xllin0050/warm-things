@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
+
     public function product()
     {
         $products = Product::get();
