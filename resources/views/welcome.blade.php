@@ -87,7 +87,11 @@
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
-                    <a href="{{ route('account', ['id' => Auth::id()])}}">oooo</a>
+                   
+                      <a href="{{ route('account', ['id' => Auth::id()])}}">oooo</a>  
+                      @auth
+                      @endauth
+                    
                     {{-- <a href="{{ route('UserID', ['uid' => Auth::id()] }}">member</a> --}}
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>

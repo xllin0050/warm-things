@@ -25,6 +25,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/checkout', 'FrontController@checkout');
+Route::get('/product', 'FrontController@product');
 
 Route::post('/add_cart','ShoppingCartController@addCart');
 

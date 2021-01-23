@@ -10,10 +10,6 @@
 @section('main')
     
 <section class="features1 cid-smDOyGOqDs" id="features2-l">
-
-    
-
-    
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-3">

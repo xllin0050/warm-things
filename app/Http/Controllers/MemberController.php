@@ -9,6 +9,7 @@ class MemberController extends Controller
 {
     public function index($id)
     {
+       
         $user = User::find($id);
         return view('front.member.index',compact('user'));
     }
