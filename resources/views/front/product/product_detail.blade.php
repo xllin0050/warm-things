@@ -18,6 +18,7 @@
 
 <body>
     <main>
+
         <section class="wrap">
 
             <!-- 麵包屑 -->
@@ -30,7 +31,8 @@
             <a href="/checkout">
                 <i class="fas fa-shopping-cart shopping_cart">
                     <?php
-                    $getTotalQty=\Cart::getTotalQuantity();?>
+                    $getTotalQty=\Cart::getTotalQuantity();
+                    ?>
                     <div class="qty">{{$getTotalQty}}</div>
                 </i>
             </a>
@@ -42,11 +44,11 @@
                 <div class="product_selection">
                     <div class="product_title">{{$products->name}}</div>
                     <div class="product_price"><span>{{$products->price}}</span></div>
-                    <div class="product_thumbnail item">
+                    {{-- <div class="product_thumbnail item">
                         <img src="./img/04-product_detail/Warmgrey Tail 生活設計展-1 布商品.jpg" alt="產品縮圖">
                         <img src="./img/04-product_detail/Warmgrey Tail 生活設計展-1 布商品.jpg" alt="產品縮圖">
                         <img src="./img/04-product_detail/Warmgrey Tail 生活設計展-1 布商品.jpg" alt="產品縮圖">
-                    </div>
+                    </div> --}}
                     <div class="product_quantity">
                         <div class="btn_group">
                             <button type="button" class="btn add_down">-</button>
@@ -87,14 +89,13 @@
 
         </section>
     </main>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="  crossorigin="anonymous"></script>
     <script>
-
 var addCartBtn = document.querySelector('.addchart_btn');
 
     addCartBtn.onclick = function(){
 
-        var id=this.getAttribute('data-id');
+        var id=addCartBtn.getAttribute('data-id');
 
 
         var _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -105,17 +106,17 @@ var addCartBtn = document.querySelector('.addchart_btn');
         formData.append('_token',_token);
 
         fetch('/add_cart',{
-            method:'POST',
-            body:formData,
-        })
+                method:'POST',
+                body:formData,
+            })
 
-        .then(function(response){
-            return response.text()
-        })
+            .then(function(response){
+                return response.text()
+            })
 
-        .then(function(data){
+
+            .then(function(data){
                 console.log('成功',data);
-
                 if(data == "false"){
                     alert('找不到該項商品');
                 }
@@ -123,10 +124,9 @@ var addCartBtn = document.querySelector('.addchart_btn');
                     $('.shopping_cart .qty').text(data);
                 }
             })
-        .catch(function(error){
+            .catch(function(error){
                 console.log('錯誤',error);
-        });
-
+            })
 
 
     };
