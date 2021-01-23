@@ -24,6 +24,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/checkout', 'FrontController@checkout');
+
+Route::post('/add_cart','ShoppingCartController@addCart');
+
+Route::post('/del_cart','ShoppingCartController@delCart');
+
+Route::post('/update_cart','ShoppingCartController@updateCart');
+
+Route::get('/front/product/product_detail/{id}','ShoppingCartController@test');
+
+
 
 Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function(){
         Route::get('/{id?}','MemberController@index')->name('account');
@@ -38,18 +49,6 @@ Route::group(['middleware'=>['auth','is.admin'],'prefix'=>'admin'],function(){
     Route::get('/', 'UserRegController@index');
     Route::get('/reg', 'UserRegController@showAdminRegistrationForm');
     Route::post('/reg', 'UserRegController@adminRegister')->name('adminRegister');
-
-Route::get('/checkout', 'FrontController@checkout');
-
-Route::post('/add_cart','ShoppingCartController@addCart');
-
-Route::post('/del_cart','ShoppingCartController@delCart');
-
-Route::post('/update_cart','ShoppingCartController@updateCart');
-
-Route::get('/front/product/product_detail/{id}','ShoppingCartController@test');
-
-
 
     Route::group(['prefix'=>'product'],function(){
         Route::get('/','ProductController@index');
