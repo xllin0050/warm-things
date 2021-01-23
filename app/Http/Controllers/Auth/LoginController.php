@@ -48,9 +48,9 @@ class LoginController extends Controller
     public function redirectTo()
     {
         if(Auth::user()->type == 'admin'){
-            return '/admin';
+            return redirect('/admin');
         }
-            return '/';
+            return redirect('/');
         
     }
 }
