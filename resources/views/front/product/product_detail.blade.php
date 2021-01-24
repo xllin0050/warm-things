@@ -39,7 +39,7 @@
 
             <div class="product_info">
                 <div class="product_img_wrap">
-                    <img src={{$products->img}} alt="">
+                    <img img width="600" src={{$products->img}} alt="">
                 </div>
                 <div class="product_selection">
                     <div class="product_title">{{$products->name}}</div>

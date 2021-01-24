@@ -26,6 +26,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/checkout', 'FrontController@checkout');
 Route::get('/product', 'FrontController@product');
+Route::get('/create_order','FrontController@createOrder');
+
 Route::post('/product/{type_id}', 'FrontController@productType');
 
 Route::post('/add_cart','ShoppingCartController@addCart');
@@ -47,7 +49,7 @@ Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function(){
 });
 
 Route::group(['middleware'=>['auth','is.admin'],'prefix'=>'admin'],function(){
-    
+
     Route::get('/', 'UserRegController@index');
     Route::get('/reg', 'UserRegController@showAdminRegistrationForm');
     Route::post('/reg', 'UserRegController@adminRegister')->name('adminRegister');
@@ -98,5 +100,15 @@ Route::group(['middleware'=>['auth','is.admin'],'prefix'=>'admin'],function(){
         Route::post('/update/{id}','NewArrivalController@update');
         Route::get('/destroy/{id}','NewArrivalController@destroy');
     });
+
+    Route::group(['prefix' => 'order'],function(){
+        Route::get('/','OrderController@index');
+        Route::get('/create','OrderController@create');
+        Route::post('/store','OrderController@store');
+        Route::get('/edit/{id}','OrderController@edit');
+        Route::post('/update/{id}','OrderController@update');
+        Route::get('/destroy/{id}','OrderController@destroy');
+
+        });
 
 });

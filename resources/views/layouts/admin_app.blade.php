@@ -59,6 +59,11 @@
                             <a href="/admin/report">媒體報導</a>
                             </button>
                         </div>
+                        <div class="btn-group ml-2">
+                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
+                            <a href="/admin/order">訂單管理</a>
+                            </button>
+                        </div>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
