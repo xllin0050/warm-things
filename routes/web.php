@@ -28,20 +28,20 @@ Route::get('/test', function ()
    return view('front.userLogin');
 });
 
+Route::get('/about_us', 'FrontController@aboutUs');
 Route::get('/checkout', 'FrontController@checkout');
 Route::get('/product', 'FrontController@product');
 Route::get('/create_order','FrontController@createOrder');
-
 Route::get('/product/{id}', 'FrontController@productType');
 
+
+
+
+
 Route::post('/add_cart','ShoppingCartController@addCart');
-
 Route::post('/del_cart','ShoppingCartController@delCart');
-
 Route::post('/update_cart','ShoppingCartController@updateCart');
-
 Route::get('/product/product_detail/{id}','ShoppingCartController@productDetail');
-
 
 
 

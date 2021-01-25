@@ -45,7 +45,7 @@ button:focus {
 }
 
 #cart-shipping:before{
-    content: '';
+    content:'';
 }
 
 /* This is used as the traditional .clearfix class */

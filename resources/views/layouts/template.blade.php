@@ -21,7 +21,8 @@
                 <a href=""><span>登入 / 註冊</span></a>
             </div>
             <div class="logo">
-                <img src="/img/00-template/logo.png" alt="">
+                <a href="/">
+                <img src="/img/00-template/logo.png" alt=""></a>
             </div>
             <div class="nav_btns d_none">
                 <ul class="header_nav">
@@ -31,7 +32,7 @@
                             <i class="fas fa-angle-down"></i>
                         </a>
                         <ul class="menu">
-                            <li><a href="">我們的理念</a></li>
+                            <li><a href="/about_us">我們的理念</a></li>
                             <li><a href="">大人器物學</a></li>
                             <li><a href="">媒體報導</a></li>
                         </ul>
