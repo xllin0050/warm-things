@@ -63,7 +63,7 @@ class FrontController extends Controller
         }
 
         \Cart::clear();
-        return redirect('/admin/order');
+        return redirect('/');
 
 
 
