@@ -6,16 +6,17 @@
     訂單列表連結 []
     
 product 商品
-    migration[]
-    model[]
-    controller[]
-    |-index[]
-    |-create[]
-    |-store[]
-    |-edit[]
-    |-update[]
-    |-destroy[]
-    routes[]
+    migration[0]
+    model[0]
+    controller[0]
+    |-index[0]
+    |-create[0]
+    |-store[0]
+    |-edit[0]
+    |-update[0]
+    |-destroy[0]
+    routes[0]
+    
 
 product type 商品分類
     migration[]

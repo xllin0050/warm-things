@@ -28,7 +28,7 @@ Route::get('/checkout', 'FrontController@checkout');
 Route::get('/product', 'FrontController@product');
 Route::get('/create_order','FrontController@createOrder');
 
-Route::post('/product/{type_id}', 'FrontController@productType');
+Route::get('/product/{id}', 'FrontController@productType');
 
 Route::post('/add_cart','ShoppingCartController@addCart');
 
