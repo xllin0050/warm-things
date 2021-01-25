@@ -1,6 +1,6 @@
 @extends('layouts.admin_app')
 @section('css')
-    
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endsection
 @section('main')
 <div class="container py-5">
@@ -8,7 +8,7 @@
     <hr>
     <form action="/admin/product/store" method="POST" enctype="multipart/form-data">
         @csrf
-        
+
         <div class="form-group">
             <label for="type_id">類別</label>
             {{-- <input type="number" class="form-control" id="type_id" name="type_id"> --}}
@@ -52,5 +52,5 @@
 </div>
 @endsection
 @section('js')
-    
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 @endsection

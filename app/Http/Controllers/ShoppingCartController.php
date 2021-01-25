@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ShoppingCartController extends Controller
 {
-    public function test($id)
+    public function productDetail($id)
     {
         $products = Product::find($id);
         return view('front.product.product_detail',compact('products'));

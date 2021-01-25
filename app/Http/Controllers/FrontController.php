@@ -44,12 +44,12 @@ class FrontController extends Controller
 
         foreach($cartCollection as $item){
 
-            .forEach(element => {
+            // .forEach(element => {
 
 
 
 
-            })
+            // })
                 $product = Product::find($item->id);
 
                 $order= Order::create([
@@ -63,12 +63,12 @@ class FrontController extends Controller
 
                 ]);
 
-
-
-            \Cart::clear();
-            return redirect('/admin/order');
-
         }
+
+        \Cart::clear();
+        return redirect('/admin/order');
+
+
 
     }
 }
