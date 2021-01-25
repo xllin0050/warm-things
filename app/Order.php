@@ -20,7 +20,7 @@ class Order extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -28,7 +28,7 @@ class Order extends Model
     /**
      * @var array
      */
-    protected $fillable = ['order_number', 'user_id', 'product_id', 'name', 'price', 'qty', 'img', 'created_at', 'updated_at'];
+    protected $fillable = ['order_number', 'user_id', 'product_id', 'name', 'price', 'total_price','qty', 'img', 'created_at', 'updated_at'];
 
     public function user(){
         return $this->hasOne('App\User','id','user_id');

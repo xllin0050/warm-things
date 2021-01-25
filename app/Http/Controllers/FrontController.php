@@ -44,12 +44,7 @@ class FrontController extends Controller
 
         foreach($cartCollection as $item){
 
-            // .forEach(element => {
 
-
-
-
-            // })
                 $product = Product::find($item->id);
 
                 $order= Order::create([
@@ -59,6 +54,8 @@ class FrontController extends Controller
                     'price'=>$product->price,
                     'qty'=>$item->quantity,
                     'img'=>$product->img,
+                    'total_price'=>\Cart::getTotal(),
+
                     'order_number'=>$order_number,
 
                 ]);
