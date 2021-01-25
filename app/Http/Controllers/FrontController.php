@@ -43,9 +43,7 @@ class FrontController extends Controller
         $cartCollection=\Cart::getContent();
 
         foreach($cartCollection as $item){
-
-
-                $product = Product::find($item->id);
+             $product = Product::find($item->id);
 
                 $order= Order::create([
                     'user_id'=>Auth::user()->id,

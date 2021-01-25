@@ -145,7 +145,7 @@
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 <div class="col-3">{{$order->order_number}}</div>
                 <div class="col-3">{{$order->created_at}}</div>
-                <div class="col-2">{{$order->}}</div>
+                <div class="col-2">{{$order->total_price}}</div>
                 <button type="button" class="btn btn-primary">展開</button>
 
                 {{-- <!-- Button trigger modal -->
