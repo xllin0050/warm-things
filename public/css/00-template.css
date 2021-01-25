@@ -11,7 +11,6 @@ body {
 header {
   width: 100%;
   padding: 0 8%;
-  position: fixed;
   background-color: #fff;
 }
 
@@ -51,18 +50,11 @@ header .wrap .login a span {
 
 header .wrap .logo {
   width: 120px;
-  margin-left: 10%;
 }
 
 @media screen and (max-width: 1100px) {
   header .wrap .logo {
     width: 115px;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  header .wrap .logo {
-    margin-left: 5%;
   }
 }
 

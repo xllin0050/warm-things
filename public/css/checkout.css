@@ -1,38 +1,54 @@
-/* Global settings */
 /* Global "table" column settings */
 .product-image {
   float: left;
   width: 20%;
+  font-size: 20px;
 }
 
 .product-details {
   float: left;
   width: 37%;
+  font-size: 20px;
 }
 
 .product-price {
   float: left;
   width: 12%;
+  font-size: 20px;
 }
 
 .product-quantity {
   float: left;
   width: 10%;
+  font-size: 20px;
+}
+
+.product-quantity input {
+  font-size: 20px;
 }
 
 .product-removal {
   float: left;
   width: 9%;
+  font-size: 20px;
 }
 
 .product-line-price {
   float: left;
   width: 12%;
   text-align: right;
+  font-size: 20px;
+}
+
+button:focus {
+  outline: 0;
 }
 
 /* This is used as the traditional .clearfix class */
-.group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
+.group:before, .shopping-cart:before,
+.column-labels:before,
+.product:before,
+.totals-item:before,
 .group:after,
 .shopping-cart:after,
 .column-labels:after,
@@ -51,33 +67,38 @@
   clear: both;
 }
 
-.group, .shopping-cart, .column-labels, .product, .totals-item {
+.group, .shopping-cart,
+.column-labels,
+.product,
+.totals-item {
   zoom: 1;
 }
 
 /* Apply clearfix in a few places */
 /* Apply dollar signs */
-.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+.product .product-price:before,
+.product .product-line-price:before,
+.totals-value:before {
   content: '$';
 }
 
 /* Body/Header stuff */
 body {
-  padding: 100px 500px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  padding: 50px;
+  background-color: #F0F0F1;
 }
 
 h1 {
-  font-weight: 100;
+  background-color: #F0F0F1;
 }
 
 label {
-  color: #aaa;
+  color: black;
 }
 
 .shopping-cart {
-  margin-top: -45px;
+  background-color: #fff;
+  padding: 30px;
 }
 
 /* Column headers */
@@ -87,7 +108,9 @@ label {
   border-bottom: 1px solid #eee;
 }
 
-.column-labels .product-image, .column-labels .product-details, .column-labels .product-removal {
+.column-labels .product-image,
+.column-labels .product-details,
+.column-labels .product-removal {
   text-indent: -9999px;
 }
 
@@ -108,12 +131,7 @@ label {
 
 .product .product-details .product-title {
   margin-right: 20px;
-  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
-}
-
-.product .product-details .product-description {
-  margin: 5px 20px 5px 0;
-  line-height: 1.4em;
+  font-size: 20px;
 }
 
 .product .product-quantity input {
@@ -123,17 +141,13 @@ label {
 .product .remove-product {
   border: 0;
   padding: 4px 8px;
-  background-color: rgb(51, 187, 228);
+  background-color: #c66;
   color: #fff;
-  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
-  font-size: 12px;
-  border-radius: 3px;
-  margin-left: 40px;
-  cursor: pointer;
+  font-size: 20px;
 }
 
 .product .remove-product:hover {
-  background-color: rgb(235, 201, 9);
+  background-color: #a44;
 }
 
 /* Totals section */
@@ -149,31 +163,28 @@ label {
   clear: both;
   width: 79%;
   text-align: right;
+  font-size: 20px;
 }
 
 .totals .totals-item .totals-value {
   float: right;
   width: 21%;
   text-align: right;
-}
-
-.totals .totals-item-total {
-  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  font-size: 20px;
 }
 
 .checkout {
   float: right;
   border: 0;
   margin-top: 20px;
-  padding: 6px 25px;
-  background-color: rgb(19, 118, 231);
+  padding: 12px 50px;
+  background-color: #A5A5A5;
   color: #fff;
-  font-size: 25px;
-  border-radius: 3px;
+  font-size: 36px;
 }
 
 .checkout:hover {
-  background-color: rgb(2, 70, 116);
+  background-color: #763134;
 }
 
 /* Make adjustments for tablet */
@@ -241,4 +252,4 @@ label {
     width: 40%;
   }
 }
-/*# sourceMappingURL=checkout.css.map */
+/*# sourceMappingURL=06-checkout.css.map */

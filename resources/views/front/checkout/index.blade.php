@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>結帳畫面</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="{{ asset('css/checkout.css') }}">
@@ -19,17 +19,17 @@
 </head>
 <body>
 
-    <h1>Shopping Cart</h1>
+    <h1>我的購物車</h1>
 
 <div class="shopping-cart">
 
   <div class="column-labels">
-    <label class="product-image">Image</label>
-    <label class="product-details">Product</label>
-    <label class="product-price">Price</label>
-    <label class="product-quantity">Quantity</label>
-    <label class="product-removal">Remove</label>
-    <label class="product-line-price">Total</label>
+    <label class="product-image">圖片</label>
+    <label class="product-details">商品</label>
+    <label class="product-price">價格</label>
+    <label class="product-quantity">數量</label>
+    <label class="product-removal">刪除</label>
+    <label class="product-line-price">小計</label>
   </div>
 
 
@@ -49,7 +49,7 @@
   </div>
   <div class="product-removal">
     <button class="remove-product" data-id="{{$cart->id}}">
-      Remove
+        <i class="far fa-trash-alt"></i>
     </button>
   </div>
   <div class="product-line-price" data-price="{{$cart->quantity * $product->price}}">{{number_format($cart->quantity * $product->price)}}</div>
@@ -82,7 +82,7 @@
   </div>
 </div>
 
-<a href="/create_order" class="checkout">結帳</a>
+<a href="/create_order" class="checkout">下單購買</a>
 
 </div>
 
@@ -92,7 +92,7 @@
 
     /* Set rates + misc */
      var taxRate = 0.05;
-     var shippingRate = 15.00;
+     var shippingRate = 0;
      var fadeTime = 300;
 
 
