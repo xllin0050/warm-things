@@ -141,13 +141,19 @@
             <div class="col-2 font-weight">訂單編號</div> 
             <div class="col-2 font-weight">成立時間</div>
             <div class="col-1 font-weight">總計</div>
+            <div class="col-1 font-weight">狀態</div>
             <div class="font-weight">動作</div>
         </li>
     @foreach ($orders as $order)
+    @php
+    $statusName = App\OrderStatus::find($order->order_status);
+    @endphp
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <div class="col-3">{{$order->order_number}}</div>
-            <div class="col-3">{{$order->created_at}}</div>
+            <div class="col-3">{{$order->created_at->format('Y-m-d')}}</div>
             <div class="col-2">{{$order->total_price}}</div>
+            <div class="col-2">{{$statusName->status ?? ''}}</div>
+
 
             <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Order_{{$order->id}}">

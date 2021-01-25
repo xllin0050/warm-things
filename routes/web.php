@@ -26,32 +26,25 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/test', function ()
 {
-   return view('front.userLogin');
+   return view('welcome');
 });
 
-Route::get('/checkout', 'FrontController@checkout');
 Route::get('/product', 'FrontController@product');
-Route::get('/create_order','FrontController@createOrder');
-
 Route::get('/product/{id}', 'FrontController@productType');
 
-Route::post('/add_cart','ShoppingCartController@addCart');
+Route::get('/checkout', 'FrontController@checkout');
 
-Route::post('/del_cart','ShoppingCartController@delCart');
-
-Route::post('/update_cart','ShoppingCartController@updateCart');
+Route::get('/create_order','FrontController@createOrder');
 
 Route::get('/product/product_detail/{id}','ShoppingCartController@productDetail');
 
-
-
+Route::post('/add_cart','ShoppingCartController@addCart');
+Route::post('/del_cart','ShoppingCartController@delCart');
+Route::post('/update_cart','ShoppingCartController@updateCart');
 
 Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function(){
         Route::get('/{id?}','MemberController@index')->name('account');
         Route::post('/{id?}','MemberController@update');
-        // Route::post('/','MemberController@error');
-        // return redirect()->route('account',[$id]);
-
 });
 
 Route::group(['middleware'=>['auth','is.admin'],'prefix'=>'admin'],function(){
