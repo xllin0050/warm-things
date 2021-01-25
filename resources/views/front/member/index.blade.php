@@ -149,11 +149,11 @@
                 <div class="col-3">{{$order->created_at}}</div>
                 <div class="col-2">{{$order->total_price}}</div>
                 {{-- <button type="button" class="btn btn-primary">展開</button> --}}
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" data-id="{{$order->order_number}}">展開</button>
-            </li>
-                @endforeach  
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$order->id}}" data-id="{{$order->order_number}}">展開</button>
+            
+               
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -165,14 +165,14 @@
                     <div class="modal-body">
                         <h5 class="card-title">訂單詳細資料</h5>
                         <div class="row">
-                            @foreach ($orders as $order)
+                            
                             <ul class="list-group">
                                 <li class="list-group-item">品名{{$order->name}}</li>
                                 <li class="list-group-item">單價{{$order->price}}</li>
                                 <li class="list-group-item">數量{{$order->qty}}</li>
                                 <li class="list-group-item">總價{{$order->total_price}}</li>
                               </ul>
-                            @endforeach
+                            
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -182,8 +182,8 @@
                     </div>
                 </div>
                 </div>
-             
-             
+            </li>
+                @endforeach  
                 
 
              <!-- Button trigger modal -->
