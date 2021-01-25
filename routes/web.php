@@ -40,7 +40,7 @@ Route::post('/del_cart','ShoppingCartController@delCart');
 
 Route::post('/update_cart','ShoppingCartController@updateCart');
 
-Route::get('/front/product/product_detail/{id}','ShoppingCartController@test');
+Route::get('/product/product_detail/{id}','ShoppingCartController@productDetail');
 
 
 
