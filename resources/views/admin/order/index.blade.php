@@ -13,6 +13,7 @@
         <tr>
             <th>訂單編號</th>
             <th>使用者編號</th>
+            <th>總計</th>
             <th>編號</th>
             <th>名稱</th>
             <th>價格</th>
@@ -27,6 +28,7 @@
 
             <td>{{$order->order_number}}</td>
             <td>{{$order->user_id}}</td>
+            <td>{{$order->total_price}}</td>
             <td>{{$order->product_id}}</td>
             <td>{{$order->name}}</td>
             <td>{{$order->price}}</td>
