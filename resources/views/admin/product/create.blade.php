@@ -45,7 +45,7 @@
 
         <div class="form-group">
             <label for="description">描述</label>
-            <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+            <div class="form-control" id="description" rows="3" name="description"></div>
         </div>
 
         <button type="submit" class="btn btn-primary">送出</button>
@@ -57,8 +57,14 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>
     
-    $(document).ready( function () {
-    $('#description').DataTable();
-} );
+    // $(document).ready( function () {
+    // $('#description').DataTable();
+    // } );
+
+    $('#description').summernote({
+        placeholder: '請輸入商品描述',
+        tabsize: 2,
+        height: 100
+      });
 </script>
 @endsection
