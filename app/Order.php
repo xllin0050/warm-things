@@ -30,4 +30,8 @@ class Order extends Model
      */
     protected $fillable = ['order_number', 'user_id', 'product_id', 'name', 'price', 'qty', 'img', 'created_at', 'updated_at'];
 
+    public function user(){
+        return $this->hasOne('App\User','id','user_id');
+    }
+
 }
