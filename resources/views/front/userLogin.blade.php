@@ -43,7 +43,19 @@
                 <div class="sign-up-htm">
                     <form action="{{ route('register') }}" method="POST">
                     @csrf
-                                        <div class="group">
+                    <div class="group">
+                        <label for="name" class="label">姓名</label>
+                        
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                    </div> 
+                    
+                    <div class="group">
                         <label for="pass" class="label">電子信箱</label>
                         {{-- <input id="pass" type="text" class="input"> --}}
 
@@ -68,6 +80,10 @@
                                     </span>
                                 @enderror
                         
+                    </div>
+                    <div class="group">
+                        <label for="check-pass" class="label">確認密碼</label>
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                     <div class="group">
                         <input type="submit" class="button" value="註冊">
