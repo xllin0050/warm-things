@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('front.login');
+        return view('front.userLogin');
     }
 
     public function redirectTo()
