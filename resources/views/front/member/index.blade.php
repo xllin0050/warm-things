@@ -54,7 +54,6 @@
     <hr>
     <section>
         <div class="edit_title font-size-small py-4">編輯</div>
-        {{-- <hr> --}}
         <form>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -111,22 +110,25 @@
             </button>
             
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">是否確定更改資料？</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
+                    </div>
+                    <div class="modal-body">
+                        是否確定更改資料？
+                    </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                    <button type="submit" class="btn btn-primary">確定</button>
+                    <button type="button" class="btn btn-primary">確定</button>
                     </div>
                 </div>
                 </div>
             </div>
-
         </form>
     </section>
     <hr>
@@ -141,40 +143,51 @@
                 <div class="col-1 font-weight">總計</div>
                 <div class="font-weight">動作</div>
               </li>
-              {{-- @foreach ($orders as $order) --}}
+              @foreach ($orders as $order)
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 <div class="col-3">{{$order->order_number}}</div>
                 <div class="col-3">{{$order->created_at}}</div>
                 <div class="col-2">{{$order->total_price}}</div>
-                <button type="button" class="btn btn-primary">展開</button>
-
-                {{-- <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Launch demo modal
-                </button>
-                
+                {{-- <button type="button" class="btn btn-primary">展開</button> --}}
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$order->id}}" data-id="{{$order->order_number}}">展開</button>
+            
+               
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                <div class="modal fade" id="{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                         </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="card-title">訂單詳細資料</h5>
+                        <div class="row">
+                            
+                            <ul class="list-group">
+                                <li class="list-group-item">品名{{$order->name}}</li>
+                                <li class="list-group-item">單價{{$order->price}}</li>
+                                <li class="list-group-item">數量{{$order->qty}}</li>
+                                <li class="list-group-item">總價{{$order->total_price}}</li>
+                              </ul>
+                            
                         </div>
-                        <div class="modal-body">
-                        ...
-                        </div>
-                        <div class="modal-footer">
+                    </div>
+                    <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+                        {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
                     </div>
                     </div>
-                </div> --}}
-             </li>
-              {{-- @endforeach --}}
+                </div>
+                </div>
+            </li>
+                @endforeach  
+                
+
+             <!-- Button trigger modal -->
+   
           </ul>
     </section>
     <hr>
@@ -184,13 +197,3 @@
     
 @endsection
 
-<!-- <div class="card  w-75 mx-auto mt-3">
-    <div class="card-body  auto">
-      <h5 class="card-title">訂單詳細資料</h5>
-      <div class="row">
-          <div class="col">商品名稱</div>
-          <div class="col text-right">總計</div>
-      </div>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div> -->

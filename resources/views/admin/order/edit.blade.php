@@ -7,7 +7,7 @@
 <div class="container py-5">
     <h2>編輯訂單狀態</h2>
     <hr>
-    <form action="/admin/product/update/{{$product->id}}" method="POST" enctype="multipart/form-data">
+    <form action="/admin/order/update/{{$order->id}}" method="POST" enctype="multipart/form-data">
         @csrf
         
         {{-- <div class="form-group">
@@ -23,17 +23,17 @@
 
         <div class="form-group">
             <label for="name">名稱</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{$product->name}}">
+            <input type="text" class="form-control" id="name" name="name" value="{{$order->name}}">
         </div>
 
         <div class="form-group">
             <label for="price">價格</label>
-            <input type="number" class="form-control" id="price" name="price" value="{{$product->price}}">
+            <input type="number" class="form-control" id="price" name="price" value="{{$order->price}}">
         </div>
 
         <div class="form-group">
             <label for="img">商品圖片</label>
-            <img src="{{$product->img}}" alt="" width="200px">
+            <img src="{{$order->img}}" alt="" width="200px">
         </div>
 
         <div class="form-group">
@@ -48,7 +48,7 @@
 
         <div class="form-group">
             <label for="description">描述</label>
-            <textarea class="form-control" id="description" rows="3" name="description">{{$product->description}}</textarea>
+            <textarea class="form-control" id="description" rows="3" name="description">{{$order->description}}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">送出</button>
