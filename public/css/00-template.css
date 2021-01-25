@@ -58,12 +58,6 @@ header .wrap .logo {
   }
 }
 
-@media screen and (max-width: 350px) {
-  header .wrap .logo {
-    margin-left: 0;
-  }
-}
-
 header .wrap .logo img {
   width: 100%;
 }
@@ -310,6 +304,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 50px;
 }
 
 footer .footer_area {

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>樣板</title>
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -32,7 +33,7 @@
                         <ul class="menu">
                             <li><a href="">我們的理念</a></li>
                             <li><a href="">大人器物學</a></li>
-                            <li><a href="">媒體報導</a></li> 
+                            <li><a href="">媒體報導</a></li>
                         </ul>
                     </li>
                     <li>
@@ -61,11 +62,11 @@
                     <span class="bot_bar bar"></span>
                 </button>
             </div>
-            
+
         </div>
     </header>
 
-    
+
 
     <main>
         @yield('content')
@@ -76,7 +77,7 @@
 
     <footer>
         <section class="footer_area">
-            
+
             <!-- 店家資訊 -->
             <div class="footer_info">
                 <!-- 導覽列 -->
@@ -85,7 +86,7 @@
                         <li><a href="">::關於我們::</a></li>
                         <li><a href="">::最新消息::</a></li>
                         <li><a href="">::線上購物::</a></li>
-                        <li><a href="">::會員專區::</a></li> 
+                        <li><a href="">::會員專區::</a></li>
                     </ul>
                 </div>
                 <!-- 聯絡資訊 -->
@@ -110,8 +111,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    
-    
+
+
     <script>
         // btn_click
         let nav_btns = document.querySelector(".nav_btns")
