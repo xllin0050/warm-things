@@ -1,7 +1,9 @@
 @extends('layouts.admin_app')
+
 @section('css')
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endsection
+
 @section('main')
 <div class="container py-5">
     <h2>新增商品</h2>
@@ -53,4 +55,10 @@
 @endsection
 @section('js')
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+    
+    $(document).ready( function () {
+    $('#description').DataTable();
+} );
+</script>
 @endsection
