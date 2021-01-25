@@ -143,9 +143,9 @@
               </li>
               {{-- @foreach ($orders as $order) --}}
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div class="col-3">#96409#96409</div>
-                <div class="col-3">2021-01-18</div>
-                <div class="col-2">NT$99999</div>
+                <div class="col-3">{{$order->order_number}}</div>
+                <div class="col-3">{{$order->created_at}}</div>
+                <div class="col-2">{{$order->}}</div>
                 <button type="button" class="btn btn-primary">展開</button>
 
                 {{-- <!-- Button trigger modal -->

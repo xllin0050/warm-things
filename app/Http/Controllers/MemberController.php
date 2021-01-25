@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Order;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -11,7 +12,8 @@ class MemberController extends Controller
     {
        
         $user = User::find($id);
-        return view('front.member.index',compact('user'));
+        $order = Order::find($id);
+        return view('front.member.index',compact('user','order'));
     }
 
     public function update(Request $request, $id)
