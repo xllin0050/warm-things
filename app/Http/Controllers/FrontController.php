@@ -44,17 +44,26 @@ class FrontController extends Controller
 
         foreach($cartCollection as $item){
 
-        $product = Product::find($item->id);
-        $order= Order::create([
-            'user_id'=>Auth::user()->id,
-            'product_id'=>$product->id,
-            'name'=>$product->name,
-            'price'=>$product->price,
-            'qty'=>$item->quantity,
-            'img'=>$product->img,
-            'order_number'=>$order_number,
+            .forEach(element => {
 
-        ]);
+
+
+
+            })
+                $product = Product::find($item->id);
+
+                $order= Order::create([
+                    'user_id'=>Auth::user()->id,
+                    'product_id'=>$product->id,
+                    'name'=>$product->name,
+                    'price'=>$product->price,
+                    'qty'=>$item->quantity,
+                    'img'=>$product->img,
+                    'order_number'=>$order_number,
+
+                ]);
+
+
 
             \Cart::clear();
             return redirect('/admin/order');
