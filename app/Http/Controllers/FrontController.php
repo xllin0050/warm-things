@@ -44,7 +44,6 @@ class FrontController extends Controller
 
         foreach($cartCollection as $item){
              $product = Product::find($item->id);
-
                 $order= Order::create([
                     'user_id'=>Auth::user()->id,
                     'product_id'=>$product->id,
@@ -53,15 +52,13 @@ class FrontController extends Controller
                     'qty'=>$item->quantity,
                     'img'=>$product->img,
                     'total_price'=>\Cart::getTotal(),
-
                     'order_number'=>$order_number,
-
                 ]);
 
         }
 
         \Cart::clear();
-        return redirect('/admin/order');
+        return redirect('/member/{id}');
 
 
 

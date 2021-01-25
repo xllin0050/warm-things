@@ -12,8 +12,8 @@ class MemberController extends Controller
     {
        
         $user = User::find($id);
-        $order = Order::find($id);
-        return view('front.member.index',compact('user','order'));
+        $orders = Order::where('user_id',$id)->get();
+        return view('front.member.index',compact('user','orders'));
     }
 
     public function update(Request $request, $id)
