@@ -26,30 +26,62 @@ header .wrap {
   position: relative;
 }
 
-header .wrap .login {
+header .wrap .logLink {
   position: absolute;
   top: 5px;
-  right: -4%;
+  right: 0;
   z-index: 99;
 }
 
 @media screen and (max-width: 1100px) {
-  header .wrap .login {
+  header .wrap .logLink {
+    top: 35px;
+    right: 140px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  header .wrap .logLink {
+    top: 20px;
+    left: 0;
+  }
+}
+
+header .wrap .logLink a {
+  text-decoration: none;
+  color: black;
+}
+
+header .wrap .productCart {
+  position: absolute;
+  top: 5px;
+  right: -7%;
+  z-index: 99;
+}
+
+@media screen and (max-width: 1100px) {
+  header .wrap .productCart {
     top: 35px;
     right: 70px;
   }
 }
 
-header .wrap .login a {
-  text-decoration: none;
+@media screen and (max-width: 555px) {
+  header .wrap .productCart {
+    top: 60px;
+    left: 0;
+  }
 }
 
-header .wrap .login a span {
+header .wrap .productCart a {
+  text-decoration: none;
   color: black;
 }
 
 header .wrap .logo {
   width: 120px;
+  position: relative;
+  z-index: 99;
 }
 
 @media screen and (max-width: 1100px) {
@@ -58,24 +90,25 @@ header .wrap .logo {
   }
 }
 
-header .wrap .logo img {
-  width: 100%;
+@media screen and (max-width: 555px) {
+  header .wrap .logo {
+    left: calc(50% - 40px);
+  }
 }
 
-@media screen and (max-width: 1100px) {
-  header .wrap .d_none {
-    display: none;
-  }
+header .wrap .logo img {
+  width: 100%;
 }
 
 header .wrap .nav_btns {
   margin-top: 20px;
   margin-left: auto;
-  margin-right: 30px;
+  margin-right: 100px;
 }
 
 @media screen and (max-width: 1100px) {
   header .wrap .nav_btns {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -89,14 +122,14 @@ header .wrap .nav_btns {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 555px) {
   header .wrap .nav_btns {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 1100px) {
-  header .wrap .nav_btns .nav_btns_click {
+  header .wrap .nav_btns.nav_btns_click {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
@@ -178,7 +211,7 @@ header .wrap .nav_btns .header_nav li ul {
   z-index: 9;
   display: none;
   margin-top: 10px;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0cc;
   padding: 0;
   text-align: center;
   width: 162px;
@@ -471,11 +504,35 @@ footer .copyright {
   display: flex;
 }
 
+@media screen and (max-width: 555px) {
+  footer .copyright {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  footer .copyright {
+    height: 30px;
+  }
+}
+
 footer .copyright .copyright_text {
   color: white;
   font-size: 20px;
-  color:#fff;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   margin: auto;
+}
+
+@media screen and (max-width: 555px) {
+  footer .copyright .copyright_text {
+    letter-spacing: 1.5px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  footer .copyright .copyright_text {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=00-template.css.map */

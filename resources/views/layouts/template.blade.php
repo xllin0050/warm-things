@@ -17,9 +17,15 @@
         <!-- 導覽列 -->
         <nav class="wrap">
             <!-- 登入/註冊 -->
-            <div class="login">
-                <a href=""><span>登入 / 註冊</span></a>
+            <div class="logLink">
+                <a class="log" href="">登入</a>
+                <a href="">/ 註冊</a>
             </div>
+            <!-- 購物車 -->
+            <div class="productCart">
+                <a href="">購物車</a>
+            </div>
+            
             <div class="logo">
                 <a href="/">
                 <img src="/img/00-template/logo.png" alt=""></a>
