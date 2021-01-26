@@ -18,13 +18,14 @@ class ShoppingCartController extends Controller
 
         $product=Product::find($request->id);
 
+
         if ($product){
 
             \Cart::add(array(
                     'id' => $product->id,
                     'name' => $product->name,
                     'price' => $product->price,
-                    'quantity' => 1,
+                    'quantity' =>$request->qty,
                     'attributes' => array(),
             ));
 

@@ -51,7 +51,8 @@
                     <div class="product_quantity">
                         <div class="btn_group">
                             <button type="button" class="btn add_down">-</button>
-                            <input type="text" value="1" name="quantity" class="item-quantity">
+                            <div class="show_quantity">1</div>
+                            <input type="number" value="1" name="quantity" class="real_quantity" hidden>
                             <button type="button" class="btn add_up">+</button>
                         </div>
                     </div>
@@ -92,54 +93,69 @@
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="  crossorigin="anonymous"></script>
     <script>
-var addCartBtn = document.querySelector('.addchart_btn');
+        var addCartBtn = document.querySelector('.addchart_btn');
 
-    addCartBtn.onclick = function(){
+        addCartBtn.onclick = function(){
 
-        var id=addCartBtn.getAttribute('data-id');
+            var id=addCartBtn.getAttribute('data-id');
 
-
-        var _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-        var formData = new FormData;
-
-        formData.append('id',id);
-        formData.append('_token',_token);
-
-        fetch('/add_cart',{
-                method:'POST',
-                body:formData,
-            })
-
-            .then(function(response){
-                return response.text()
-            })
+            var qty= document.querySelector('.real_quantity').value;
 
 
-            .then(function(data){
-                console.log('成功',data);
-                if(data == "false"){
-                    alert('找不到該項商品');
-                }
-                else{
-                    $('.shopping_cart .qty').text(data);
-                }
-            })
-            .catch(function(error){
-                console.log('錯誤',error);
-            })
+            var _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            var formData = new FormData;
 
 
-    };
 
-        var add_down= document.querySelector('.btn add_down');
-        var add_up= document.querySelector('.btn add_up');
+            formData.append('id',id);
+            formData.append('_token',_token);
+            formData.append('qty',qty);
+
+            fetch('/add_cart',{
+                    method:'POST',
+                    body:formData,
+                })
+
+                .then(function(response){
+                    return response.text()
+                })
+
+
+                .then(function(data){
+                    console.log('成功',data);
+                    if(data == "false"){
+                        alert('找不到該項商品');
+                    }
+                    else{
+                        $('.shopping_cart .qty').text(data);
+                    }
+                })
+                .catch(function(error){
+                    console.log('錯誤',error);
+                })
+
+
+        };
+
+        var add_down= document.querySelector('.add_down');
+        var add_up= document.querySelector('.add_up');
+        var show = document.querySelector('.show_quantity');
+        var quantity = document.querySelector('.real_quantity');
 
         add_down.onclick = function(){
-            
-
+            if (quantity.value > 1){
+                quantity.value = parseInt(quantity.value) - 1
+                show.innerHTML = quantity.value
+            }
         }
-        </script>
+        add_up.onclick = function(){
+            if (quantity.value < 100){
+                quantity.value = parseInt(quantity.value) + 1
+                show.innerHTML = quantity.value
+            }
+        }
+    </script>
 
 </body>
 

@@ -707,7 +707,17 @@ main .wrap .product_info .product_selection .product_quantity {
 }
 
 main .wrap .product_info .product_selection .product_quantity .btn_group {
-  width: 160px;
+    display: flex;
+    width: 160px;
+}
+main .wrap .product_info .product_selection .product_quantity .btn_group .show_quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    font-size: 20px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 main .wrap .product_info .product_selection .product_quantity .btn_group .btn {
