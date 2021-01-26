@@ -25,13 +25,16 @@
         <a href="" class="back_home">HOME</a><span>-</span><span>線上購物</span><span>-</span><a href="">餐盤器皿</a>
     </div>
 
-    <a href="/checkout">
+    <a class="cart_icon" href="/checkout">
         <i class="fas fa-shopping-cart shopping_cart">
             <?php
             $getTotalQty=\Cart::getTotalQuantity();
             ?>
             <div class="qty">{{$getTotalQty}}</div>
         </i>
+        <span class="note_cart">
+            點我結帳
+        </span>
     </a>
 
     <div class="content_wrap">
