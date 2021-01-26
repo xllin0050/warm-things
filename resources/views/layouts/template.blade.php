@@ -25,7 +25,7 @@
             <div class="productCart">
                 <a href="">購物車</a>
             </div>
-            
+
             <div class="logo">
                 <a href="/">
                 <img src="/img/00-template/logo.png" alt=""></a>
@@ -40,7 +40,6 @@
                         <ul class="menu">
                             <li><a href="/about_us">我們的理念</a></li>
                             <li><a href="">大人器物學</a></li>
-                            <li><a href="">媒體報導</a></li>
                         </ul>
                     </li>
                     <li>
