@@ -22,7 +22,7 @@
 <section class="bg_wrap">
     <!-- 麵包屑 -->
     <div class="breadcrumb">
-        <a href="" class="back_home">HOME</a><span>-</span><span>線上購物</span><span>-</span><a href="">餐盤器皿</a>
+        <a href="/" class="back_home">HOME</a><span>-</span><span>線上購物</span><span>-</span><a href="">餐盤器皿</a>
     </div>
 
     <a class="cart_icon" href="/checkout">

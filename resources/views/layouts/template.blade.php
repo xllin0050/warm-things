@@ -24,11 +24,12 @@
             </div>
             <!-- 購物車 -->
             <div class="productCart">
-                <a href="">購物車</a>
+                <a href="/checkout">購物車</a>
             </div>
             <!-- logo -->
+
             <div class="logo">
-                <img src="./img/00-template/logo.png" alt="">
+                <a href="/"><img src="./img/00-template/logo.png" alt=""></a>
             </div>
             <!-- 選單 -->
             <div class="nav_btns">
@@ -47,12 +48,12 @@
                             ::最新消息::
                         </a>
                         <ul class="menu">
-                            <li><a href="">新品上市</a></li>
-                            <li><a href="">展覽公告</a></li>
+                            <li><a href="/news_product">新品上市</a></li>
+                            <li><a href="/news_show">展覽公告</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">::線上購物::</a>
+                        <a href="/product">::線上購物::</a>
                     </li>
                     <li>
                         <a href="">::會員專區::</a>

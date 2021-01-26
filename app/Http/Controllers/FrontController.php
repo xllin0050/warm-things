@@ -24,6 +24,17 @@ class FrontController extends Controller
     }
 
 
+    public function newsProduct()
+    {
+        return view('front.news.news');
+    }
+
+
+    public function newsShow()
+    {
+        return view('front.news.show');
+    }
+
 
     public function product()
     {

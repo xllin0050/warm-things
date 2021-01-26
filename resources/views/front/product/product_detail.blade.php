@@ -23,7 +23,7 @@
 
             <!-- 麵包屑 -->
             <div class="breadcrumb">
-                <a href="" class="back_home">HOME</a><span>-</span><span>線上購物</span><span>-</span><a
+                <a href="/" class="back_home">HOME</a><span>-</span><span>線上購物</span><span>-</span><a
                     href="">餐盤器皿</a><span>-{{$products->name}}</span>
             </div>
 

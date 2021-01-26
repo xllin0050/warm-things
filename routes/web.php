@@ -30,6 +30,8 @@ Route::get('/test', function (){
 
 Route::get('/about_us', 'FrontController@aboutUs');
 Route::get('/adult_utensils', 'FrontController@adultUtensils');
+Route::get('/news_product', 'FrontController@newsProduct');
+Route::get('/news_show', 'FrontController@newsShow');
 Route::get('/checkout', 'FrontController@checkout');
 Route::get('/product', 'FrontController@product');
 Route::get('/create_order','FrontController@createOrder');
