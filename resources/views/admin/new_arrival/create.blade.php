@@ -1,6 +1,7 @@
 @extends('layouts.admin_app')
 
 @section('css')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endsection
 
 @section('main')
@@ -35,5 +36,14 @@
 @endsection
 
 @section('js')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+
+        $('#content').summernote({
+            placeholder: '請輸入商品描述',
+            tabsize: 2,
+            height: 100
+        });
+    </script>
 
 @endsection

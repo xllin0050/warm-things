@@ -55,8 +55,6 @@
                             <button type="button" class="btn add_up">+</button>
                         </div>
                     </div>
-
-
                     <div class="addchart">
                         <input type="button" class="addchart_btn" data-id="{{$products->id}}" value="加入購物車">
 
@@ -132,14 +130,8 @@ var addCartBtn = document.querySelector('.addchart_btn');
 
     };
 
-        var add_down= document.querySelector('.btn add_down');
-        var add_up= document.querySelector('.btn add_up');
 
-        add_down.onclick = function(){
-            
-
-        }
-        </script>
+    </script>
 
 </body>
 

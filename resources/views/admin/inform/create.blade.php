@@ -1,6 +1,6 @@
 @extends('layouts.admin_app')
 @section('css')
-    
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endsection
 @section('main')
 <div class="container py-5">
@@ -8,7 +8,7 @@
     <hr>
     <form action="/admin/inform/store" method="POST" enctype="multipart/form-data">
         @csrf
-        
+
         <div class="form-group">
             <label for="title">標題</label>
             <input type="text" class="form-control" id="title" name="title">
@@ -45,5 +45,14 @@
 </div>
 @endsection
 @section('js')
-    
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+
+        $('#content').summernote({
+            placeholder: '請輸入商品描述',
+            tabsize: 2,
+            height: 100
+        });
+    </script>
+
 @endsection
