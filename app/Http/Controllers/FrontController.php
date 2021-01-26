@@ -17,6 +17,14 @@ class FrontController extends Controller
         return view('front.aboutus.index');
     }
 
+
+    public function adultUtensils()
+    {
+        return view('front.adultutensils.index');
+    }
+
+
+
     public function product()
     {
         $products = Product::get();

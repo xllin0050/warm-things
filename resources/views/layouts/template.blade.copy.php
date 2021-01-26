@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>樣板</title>
-     <!-- CSRF Token -->
-     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/00-template.css">
+    <link rel="stylesheet" href="/css/00-template.css">
     @yield('css')
 </head>
 <body>
@@ -26,25 +25,27 @@
             <div class="productCart">
                 <a href="">購物車</a>
             </div>
-            <!-- logo -->
+
             <div class="logo">
-                <img src="./img/00-template/logo.png" alt="">
+                <a href="/">
+                <img src="/img/00-template/logo.png" alt=""></a>
             </div>
-            <!-- 選單 -->
-            <div class="nav_btns">
+            <div class="nav_btns d_none">
                 <ul class="header_nav">
                     <li>
                         <a href="">
                             ::關於我們::
+                            <i class="fas fa-angle-down"></i>
                         </a>
                         <ul class="menu">
                             <li><a href="/about_us">我們的理念</a></li>
-                            <li><a href="/adult_utensils">大人器物學</a></li>
+                            <li><a href="">大人器物學</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="">
                             ::最新消息::
+                            <i class="fas fa-angle-down"></i>
                         </a>
                         <ul class="menu">
                             <li><a href="">新品上市</a></li>
@@ -74,10 +75,10 @@
 
 
     <main>
-    @yield('content')
-    @yield('main')
-
+        @yield('content')
+        @yield('main')
     </main>
+
 
 
     <footer>
@@ -134,7 +135,7 @@
                 bot_bar.classList.toggle("bot_click")
                 menu_btn.classList.toggle("menu_btn_click")
                 nav_btns.classList.toggle("nav_btns_click")
-
+                nav_btns.classList.toggle("d_none")
             }
         }
         menu_btn.addEventListener("click", menu_click)
