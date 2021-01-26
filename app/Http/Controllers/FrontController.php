@@ -10,7 +10,12 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
+
 {
+    public function aboutUs()
+    {
+        return view('front.aboutus.index');
+    }
 
     public function product()
     {
@@ -62,5 +67,7 @@ class FrontController extends Controller
 
 
 
+
     }
+
 }

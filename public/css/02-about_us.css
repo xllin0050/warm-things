@@ -1,0 +1,302 @@
+body {
+  margin: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .banner {
+  width: 100vw;
+}
+
+main .banner .banner_pic img {
+  width: 100%;
+  margin: 0px;
+}
+
+main .container-fluid {
+  width: 100%;
+}
+
+main .container-fluid .wrap {
+  width: 84%;
+  background-color: #f2f2f2;
+  margin: auto;
+}
+
+@media screen and (max-width: 1500px) {
+  main .container-fluid .wrap {
+    width: 86%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  main .container-fluid .wrap {
+    width: 88%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main .container-fluid .wrap {
+    width: 92%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .container-fluid .wrap {
+    width: 96%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main .container-fluid .wrap {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  main .container-fluid .wrap {
+    width: 100%;
+  }
+}
+
+main .container-fluid .wrap .text_area {
+  text-align: center;
+  padding: 50px;
+}
+
+main .container-fluid .wrap .text_area .title {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+main .container-fluid .wrap .text_area .title ::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 230px;
+  background-color: gray;
+}
+
+@media screen and (max-width: 768px) {
+  main .container-fluid .wrap .text_area .title {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  main .container-fluid .wrap .text_area .title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  main .container-fluid .wrap .text_area .title {
+    font-size: 18px;
+  }
+}
+
+main .container-fluid .wrap .text_area .subtitle {
+  font-size: 30px;
+  margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  main .container-fluid .wrap .text_area .subtitle {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  main .container-fluid .wrap .text_area .subtitle {
+    font-size: 16px;
+  }
+}
+
+main .container-fluid .wrap .text_area .content {
+  font-size: 18px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  main .container-fluid .wrap .text_area .content {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  main .container-fluid .wrap .text_area .content {
+    font-size: 12px;
+    line-height: 24px;
+  }
+}
+
+main .container-fluid .wrap .mili_intro .title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+  line-height: 72px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  main .container-fluid .wrap .mili_intro .title {
+    font-size: 30px;
+    line-height: 60px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  main .container-fluid .wrap .mili_intro .title {
+    font-size: 24px;
+    line-height: 48px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  main .container-fluid .wrap .mili_intro .title {
+    font-size: 18px;
+    line-height: 36px;
+  }
+}
+
+main .container-fluid .wrap .mili_intro .row {
+  text-align: center;
+  margin: 10px;
+}
+
+main .container-fluid .wrap .mili_intro .row .left_box {
+  width: 50%;
+  margin: auto;
+}
+
+main .container-fluid .wrap .mili_intro .row .left_box img {
+  width: 100%;
+  padding: 10px;
+}
+
+main .container-fluid .wrap .mili_intro .row .right_box {
+  padding: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+}
+
+main .container-fluid .wrap .mili_intro .row .right_box span {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  main .container-fluid .wrap .mili_intro .row .right_box span {
+    font-size: 18px;
+    line-height: 36px;
+  }
+}
+
+main .container-fluid .wrap .mili_intro .row .right_box p {
+  font-size: 16px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 560px) {
+  main .container-fluid .wrap .mili_intro .row .right_box p {
+    font-size: 12px;
+    line-height: 24px;
+  }
+}
+
+main .container-fluid .wrap .rick_intro .row {
+  text-align: center;
+  padding: 50px;
+}
+
+@media screen and (max-width: 992px) {
+  main .container-fluid .wrap .rick_intro .row {
+    padding: 0px;
+    margin: 10px;
+  }
+}
+
+main .container-fluid .wrap .rick_intro .row .left_box {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  width: 50%;
+  margin: auto;
+}
+
+@media screen and (max-width: 992px) {
+  main .container-fluid .wrap .rick_intro .row .left_box {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
+main .container-fluid .wrap .rick_intro .row .left_box img {
+  width: 100%;
+  padding: 10px;
+}
+
+main .container-fluid .wrap .rick_intro .row .right_box {
+  padding: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+}
+
+main .container-fluid .wrap .rick_intro .row .right_box span {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  main .container-fluid .wrap .rick_intro .row .right_box span {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+main .container-fluid .wrap .rick_intro .row .right_box p {
+  font-size: 16px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 560px) {
+  main .container-fluid .wrap .rick_intro .row .right_box p {
+    font-size: 12px;
+    line-height: 24px;
+  }
+}
+/*# sourceMappingURL=02-about_us.css.map */

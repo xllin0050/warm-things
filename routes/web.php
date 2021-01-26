@@ -28,18 +28,22 @@ Route::get('/test', function (){
    return view('welcome');
 });
 
+Route::get('/about_us', 'FrontController@aboutUs');
+Route::get('/checkout', 'FrontController@checkout');
 Route::get('/product', 'FrontController@product');
+Route::get('/create_order','FrontController@createOrder');
 Route::get('/product/{id}', 'FrontController@productType');
 
-Route::get('/checkout', 'FrontController@checkout');
 
-Route::get('/create_order','FrontController@createOrder');
 
-Route::get('/product/product_detail/{id}','ShoppingCartController@productDetail');
+
 
 Route::post('/add_cart','ShoppingCartController@addCart');
 Route::post('/del_cart','ShoppingCartController@delCart');
 Route::post('/update_cart','ShoppingCartController@updateCart');
+Route::get('/product/product_detail/{id}','ShoppingCartController@productDetail');
+
+
 
 Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function(){
         Route::get('/','MemberController@index')->name('account');

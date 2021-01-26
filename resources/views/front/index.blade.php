@@ -43,7 +43,7 @@
         <p>體驗我們的想法及理念</p>
         <p>感覺受到尊重及用心對待</p>
         <p>發揚一期一會之精神</p>
-        <a href="" class="hvr-icon-bounce">Read<br />More<i class="fas fa-chevron-down hvr-icon"></i></a>
+        <a href="/about_us"class="hvr-icon-bounce">Read<br/>More<i class="fas fa-chevron-down hvr-icon"></i></a>
     </div>
     <div class="aboutUs_pic" data-aos="zoom-in" data-aos-duration="3000">
         <img src="./img/01-index/01-aboutUs/aboutUs01.jpg" alt="" id="aboutUs_before">

@@ -474,6 +474,7 @@ footer .copyright {
 footer .copyright .copyright_text {
   color: white;
   font-size: 20px;
+  color:#fff;
   letter-spacing: 1.5px;
   margin: auto;
 }

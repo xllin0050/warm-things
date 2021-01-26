@@ -44,6 +44,10 @@ button:focus {
   outline: 0;
 }
 
+#cart-shipping:before{
+    content:'';
+}
+
 /* This is used as the traditional .clearfix class */
 .group:before, .shopping-cart:before,
 .column-labels:before,
