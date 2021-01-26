@@ -44,10 +44,6 @@ button:focus {
   outline: 0;
 }
 
-#cart-shipping:before{
-    content:'';
-}
-
 /* This is used as the traditional .clearfix class */
 .group:before, .shopping-cart:before,
 .column-labels:before,
@@ -89,11 +85,12 @@ button:focus {
 /* Body/Header stuff */
 body {
   padding: 50px;
-  background-color: #F0F0F1;
+  background-color: #ffffff;
 }
 
 h1 {
-  background-color: #F0F0F1;
+  background-color: #ffffff;
+  margin: 50px 0 10px 30px;
 }
 
 label {
@@ -139,7 +136,7 @@ label {
 }
 
 .product .product-quantity input {
-  width: 40px;
+  width: 55px;
 }
 
 .product .remove-product {
