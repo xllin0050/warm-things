@@ -24,8 +24,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/test', function ()
-{
+Route::get('/test', function (){
    return view('welcome');
 });
 
@@ -43,8 +42,8 @@ Route::post('/del_cart','ShoppingCartController@delCart');
 Route::post('/update_cart','ShoppingCartController@updateCart');
 
 Route::group(['middleware'=>['auth'], 'prefix'=>'member'],function(){
-        Route::get('/{id?}','MemberController@index')->name('account');
-        Route::post('/{id?}','MemberController@update');
+        Route::get('/','MemberController@index')->name('account');
+        Route::post('/','MemberController@update');
 });
 
 Route::group(['middleware'=>['auth','is.admin'],'prefix'=>'admin'],function(){

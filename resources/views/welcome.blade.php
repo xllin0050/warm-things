@@ -88,11 +88,31 @@
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
 
-                      <a href="{{ route('account', ['id' => Auth::id()])}}">oooo</a>  
-                      @auth
-                      @endauth
+                      <a href="{{ route('account')}}">oooo</a>
+                      <div class="login-links">
+                          
                     
-                    {{-- <a href="{{ route('UserID', ['uid' => Auth::id()] }}">member</a> --}}
+                    </div> 
+                        {{-- 登入登出管理 --}}
+                      <div class="logLink">
+                        @guest
+                            <a class="" href="{{ route('login') }}">{{ __('登入') }}</a>
+                            @if (Route::has('register'))
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('註冊') }}</a>
+                            @endif
+                        @else
+                            <a class="" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('登出') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        @endguest
+                      </div>
+                        {{-- 登入登出管理 --}}
+
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
