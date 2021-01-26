@@ -39,12 +39,12 @@ class NewArrivalController extends Controller
      */
     public function store(Request $request)
     {
-        $requestData = $request->all();
+        $requestData = NewArrival::get($request->all());
         
         if($request->hasFile('img')){
-            $fileName = $request->file('img');
-            $path = $this->fileUpload($fileName,'new_arrival');
-            $requestData['img'] = $path;
+            $image = \Imgur::upload($request->file('img'));
+            $requestData->img = $image->link();
+            $requestData->save();
         }
 
         NewArrival::create($requestData);
@@ -86,17 +86,15 @@ class NewArrivalController extends Controller
     public function update(Request $request, $id)
     {
         $item = NewArrival::find($id);
+        $item->title=$request->title;
+        $item->date=$request->date;
+        $item->content=$request->content;
 
-        $requestData = $request->all();
         if($request->hasFile('img')) {
-            $old_image = $item->img;
-            $file = $request->file('img');
-            $path = $this->fileUpload($file,'product');
-            $requestData['img'] = $path;
-            File::delete(public_path().$old_image);
+            $image = \Imgur::upload($request->file('img'));
+            $item->img = $image->link();
+            $item->save();
         }
-    
-        $item->update($requestData);
     
         return redirect('/admin/new_arrival');
     }
