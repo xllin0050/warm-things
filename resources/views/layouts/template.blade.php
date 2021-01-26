@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="footer_pic">
-                <img src="/img/00-template/米粒手繪.jpg" alt="">
+                <img src="./img/00-template/bowl_dec.jpg" alt="">
             </div>
         </section>
         <!-- 所有權 -->

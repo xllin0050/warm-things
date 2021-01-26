@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
-use App\OrderStatus;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class OrderStatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders= Order::get();
-        return view('admin.order.index',compact('orders'));
+        //
     }
 
     /**
@@ -59,10 +56,7 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        $order = Order::find($id);
-        $orderStatus = OrderStatus::get();
-        return view('admin.order.edit',compact('order','orderStatus'));
-        
+        //
     }
 
     /**
@@ -74,12 +68,7 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $order = Order::find($id);
-        $order->order_status = $request->order_status;
-
-        $order->save();
-
-        return redirect('/admin/order');
+        //
     }
 
     /**
@@ -90,8 +79,6 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        $order = Order::find($id);
-        $order ->delete();
-        return redirect('/admin/order');
+        //
     }
 }

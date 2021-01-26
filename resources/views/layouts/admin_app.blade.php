@@ -32,10 +32,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <span class="text mx-3">
+                        網站管理後台
+                    </span>
                         <!-- 產品管理 -->
                         <div class="btn-group ml-2">
-                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 商品管理
                             </button>
                             <div class="dropdown-menu">
@@ -45,7 +47,7 @@
                         </div>
                         <!-- 消息管理 -->
                         <div class="btn-group ml-2">
-                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 消息管理
                             </button>
                             <div class="dropdown-menu">
@@ -55,14 +57,16 @@
                         </div>
                         {{-- 媒體報導 --}}
                         <div class="btn-group ml-2">
-                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
-                            <a href="/admin/report">媒體報導</a>
+                            <a href="/admin/report"><button type="button" class="btn btn-outline-dark" aria-haspopup="true" aria-expanded="false">
+                            媒體報導
                             </button>
+                            </a>
                         </div>
                         <div class="btn-group ml-2">
-                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
-                            <a href="/admin/order">訂單管理</a>
+                            <a href="/admin/order"><button type="button" class="btn btn-outline-dark" aria-haspopup="true" aria-expanded="false">
+                            訂單管理
                             </button>
+                            </a>
                         </div>
                     </ul>
 
@@ -80,7 +84,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>管理者帳號：
                                     {{ Auth::user()->name }}
                                 </a>
 

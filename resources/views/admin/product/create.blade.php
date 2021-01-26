@@ -56,10 +56,6 @@
 @section('js')
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>
-    
-    // $(document).ready( function () {
-    // $('#description').DataTable();
-    // } );
 
     $('#description').summernote({
         placeholder: '請輸入商品描述',

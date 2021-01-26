@@ -4,7 +4,7 @@
 @endsection
 @section('main')
 <div class="container py-5">
-    <a class="btn btn-success" href="/admin/new_arrival/create">新增新品</a>
+    <a class="btn btn-success" href="/admin/new_arrival/create">新增上架公告</a>
     <hr>
     <table id="mytable" class="display">
         <thead>
