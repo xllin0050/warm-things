@@ -29,6 +29,7 @@ Route::get('/test', function (){
 });
 
 Route::get('/about_us', 'FrontController@aboutUs');
+Route::get('/adult_utensils', 'FrontController@adultUtensils');
 Route::get('/checkout', 'FrontController@checkout');
 Route::get('/product', 'FrontController@product');
 Route::get('/create_order','FrontController@createOrder');

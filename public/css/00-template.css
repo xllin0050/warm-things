@@ -164,6 +164,14 @@ header .wrap .nav_btns .header_nav {
   }
 }
 
+@media screen and (max-width: 555px) {
+  header .wrap .nav_btns .header_nav {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 header .wrap .nav_btns .header_nav li {
   font-size: 20px;
   list-style: none;
@@ -175,12 +183,22 @@ header .wrap .nav_btns .header_nav li {
   }
 }
 
-header .wrap .nav_btns .header_nav li:hover > a {
-  background-color: #f0f0f0;
+@media screen and (min-width: 1101px) {
+  header .wrap .nav_btns .header_nav li:hover > a {
+    background-color: #f0f0f0;
+  }
 }
 
 header .wrap .nav_btns .header_nav li:hover ul {
   display: block;
+}
+
+@media screen and (max-width: 1101px) {
+  header .wrap .nav_btns .header_nav li:hover ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 header .wrap .nav_btns .header_nav li a {
@@ -193,16 +211,7 @@ header .wrap .nav_btns .header_nav li a {
 @media screen and (max-width: 1100px) {
   header .wrap .nav_btns .header_nav li a {
     padding: 12px;
-  }
-}
-
-header .wrap .nav_btns .header_nav li a .fa-angle-down {
-  display: none;
-}
-
-@media screen and (max-width: 1100px) {
-  header .wrap .nav_btns .header_nav li a .fa-angle-down {
-    display: unset;
+    font-weight: bold;
   }
 }
 
@@ -211,21 +220,28 @@ header .wrap .nav_btns .header_nav li ul {
   z-index: 9;
   display: none;
   margin-top: 10px;
-  background-color: #f0f0f0cc;
   padding: 0;
   text-align: center;
   width: 162px;
 }
 
-@media screen and (min-width: 1919px) {
+@media screen and (min-width: 1101px) {
   header .wrap .nav_btns .header_nav li ul {
-    width: 161px;
+    background-color: #f0f0f0c7;
   }
 }
 
 @media screen and (max-width: 1100px) {
   header .wrap .nav_btns .header_nav li ul {
-    width: 170px;
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 0;
   }
 }
 
@@ -236,9 +252,16 @@ header .wrap .nav_btns .header_nav li ul li {
 
 @media screen and (max-width: 1100px) {
   header .wrap .nav_btns .header_nav li ul li {
-    margin: 20px;
+    margin: 20px 20px 0 20px;
     padding: 0;
   }
+  header .wrap .nav_btns .header_nav li ul li:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+header .wrap .nav_btns .header_nav li ul li a {
+  font-weight: 400;
 }
 
 header .wrap .menu_btn_Area {
