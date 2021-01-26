@@ -15,6 +15,7 @@
 {{-- <title>商品目錄</title> --}}
 @section('css')
 <link rel="stylesheet" href="/css/04-product_index.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 @endsection
 
 @section('main')
@@ -24,6 +25,14 @@
         <a href="" class="back_home">HOME</a><span>-</span><span>線上購物</span><span>-</span><a href="">餐盤器皿</a>
     </div>
 
+    <a href="/checkout">
+        <i class="fas fa-shopping-cart shopping_cart">
+            <?php
+            $getTotalQty=\Cart::getTotalQuantity();
+            ?>
+            <div class="qty">{{$getTotalQty}}</div>
+        </i>
+    </a>
 
     <div class="content_wrap">
         <div class="deraction_img"></div>
