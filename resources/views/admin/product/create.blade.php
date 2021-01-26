@@ -38,11 +38,6 @@
             <input type="file" class="form-control" id="img" name="img">
         </div>
 
-        {{-- <div class="form-group">
-            <label for="imgs">副圖片</label>
-            <input type="file" class="form-control" id="imgs" name="imgs[]" multiple>
-        </div> --}}
-
         <div class="form-group">
             <label for="description">描述</label>
             <div class="form-control" id="description" rows="3" name="description"></div>

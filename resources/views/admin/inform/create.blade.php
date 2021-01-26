@@ -25,14 +25,9 @@
         </div>
 
         <div class="form-group">
-            <label for="img">商品圖片</label>
+            <label for="img">公告圖片</label>
             <input type="file" class="form-control" id="img" name="img">
         </div>
-
-        {{-- <div class="form-group">
-            <label for="imgs">副圖片</label>
-            <input type="file" class="form-control" id="imgs" name="imgs[]" multiple>
-        </div> --}}
 
         <div class="form-group">
             <label for="content">內文</label>

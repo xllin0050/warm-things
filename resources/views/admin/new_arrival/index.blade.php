@@ -23,7 +23,7 @@
                 <td>{{$newArrival->title}}</td>
                 <td>{{$newArrival->date}}</td>
                 <td>{{$newArrival->content}}</td>
-                <td><img width="200" img src=" {{$newArrival->img}}" alt=""></td>
+                <td><img width="200" img src=" {{secure_asset($newArrival->img)}}" alt=""></td>
                 <td>
                     <div class="btn-group">
                         <a class="btn btn-success" href="/admin/new_arrival/edit/{{$newArrival->id}}">編輯</a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\NewArrival;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class NewArrivalController extends Controller
@@ -38,11 +39,16 @@ class NewArrivalController extends Controller
      */
     public function store(Request $request)
     {
-        $fileName = Storage::disk('public')->put('/image/new_arrival', $request->file('img'));
+        $requestData = $request->all();
+        
+        if($request->hasFile('img')){
+            $fileName = $request->file('img');
+            $path = $this->fileUpload($fileName,'new_arrival');
+            $requestData['img'] = $path;
+        }
 
-        $newArrivals= NewArrival::create($request->all());
-        $newArrivals->img = storage::url($fileName);
-        $newArrivals->save();
+        NewArrival::create($requestData);
+
         return redirect('/admin/new_arrival');
 
     }
@@ -79,16 +85,19 @@ class NewArrivalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $newArrivals=NewArrival::find($id);
-        $newArrivals->title = $request->title;
-        $newArrivals->date = $request->date;
-        $newArrivals->content = $request->content;
-        $newArrivals->img = $request->img;
+        $item = NewArrival::find($id);
 
-        $fileName = Storage::disk('public')->put('/image/new_arrival', $request->file('img'));
-        $newArrivals->img = storage::url($fileName);
-        $newArrivals->save();
-
+        $requestData = $request->all();
+        if($request->hasFile('img')) {
+            $old_image = $item->img;
+            $file = $request->file('img');
+            $path = $this->fileUpload($file,'product');
+            $requestData['img'] = $path;
+            File::delete(public_path().$old_image);
+        }
+    
+        $item->update($requestData);
+    
         return redirect('/admin/new_arrival');
     }
 

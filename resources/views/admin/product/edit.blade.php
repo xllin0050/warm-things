@@ -34,7 +34,7 @@
 
         <div class="form-group">
             <label for="img">商品圖片</label>
-            <img src="{{$product->img}}" alt="" width="200px">
+            <img src="{{secure_asset($product->img)}}" alt="" width="200px">
         </div>
 
         <div class="form-group">

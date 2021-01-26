@@ -38,15 +38,16 @@ class InformController extends Controller
      */
     public function store(Request $request)
     {
-        $inform = Inform::create($request->all());
-
+        $requestData = $request->all();
+        
         if($request->hasFile('img')){
-            $fileName=Storage::disk('public')->put('/images/inform',$request->file('img'));
-            $inform->img=Storage::url($fileName);
-            $inform->save();
-        }else{
-            $inform->img='/storage/image/no_image.jpg';
+            $fileName = $request->file('img');
+            $path = $this->fileUpload($fileName,'inform');
+            $requestData['img'] = $path;
         }
+
+        Inform::create($requestData);
+
         return redirect('/admin/inform');
     }
 
@@ -82,22 +83,19 @@ class InformController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inform = Inform::find($id);
-        $inform->title = $request->title;
-        $inform->openingDate=$request->openingDate;
-        $inform->closingDate=$request->closingDate;
-        $inform->content=$request->closingDate;
+        $item = Inform::find($id);
 
-        if($request->hasFile('img')){
-            if(file_exists(public_path().$inform->img)){
-                File::delete((public_path().$inform->img));
-            }
-            $fileName = Storage::disk('public')->put('/images/inform',$request->file('img'));
-            $inform->img = storage::url($fileName);
+        $requestData = $request->all();
+        if($request->hasFile('img')) {
+            $old_image = $item->img;
+            $file = $request->file('img');
+            $path = $this->fileUpload($file,'product');
+            $requestData['img'] = $path;
+            File::delete(public_path().$old_image);
         }
-
-        $inform->save();
-
+    
+        $item->update($requestData);
+    
         return redirect('/admin/inform');
     }
 
@@ -112,5 +110,24 @@ class InformController extends Controller
         $inform = Inform::find($id);
         $inform->delete();
         return redirect('/admin/inform');
+    }
+
+    private function fileUpload($file,$dir){
+        //防呆：資料夾不存在時將會自動建立資料夾，避免錯誤
+        if( ! is_dir('upload/')){
+            mkdir('upload/');
+        }
+        //防呆：資料夾不存在時將會自動建立資料夾，避免錯誤
+        if ( ! is_dir('upload/'.$dir)) {
+            mkdir('upload/'.$dir);
+        }
+        //取得檔案的副檔名
+        $extension = $file->getClientOriginalExtension();
+        //檔案名稱會被重新命名
+        $filename = strval(time().md5(rand(100, 200))).'.'.$extension;
+        //移動到指定路徑
+        move_uploaded_file($file, public_path().'/upload/'.$dir.'/'.$filename);
+        //回傳 資料庫儲存用的路徑格式
+        return '/upload/'.$dir.'/'.$filename;
     }
 }

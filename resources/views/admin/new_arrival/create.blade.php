@@ -26,10 +26,6 @@
                 <label for="img">圖片</label>
                 <input type="file" class="form-control" id="img" name="img">
             </div>
-            {{-- <div class="form-group">
-                <label for="imgs">其他圖片</label>
-                <input type="file" class="form-control" id="img" name="imgs[]"multiple>
-            </div> --}}
             <button type="submit" class="btn btn-primary">送出</button>
           </form>
     </div>

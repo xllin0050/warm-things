@@ -35,7 +35,7 @@
                 <td>{{$product->name}}</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->description}}</td>
-                <td><img img width="200" src="{{$product->img}}" alt=""> </td>
+                <td><img img width="200" src="{{secure_asset($product->img)}}" alt=""> </td>
                 <td>
                     <a class="btn btn-success" href="/admin/product/edit/{{$product->id}}">編輯</a>
                     <a class="btn btn-danger" href="/admin/product/destroy/{{$product->id}}">刪除</a>

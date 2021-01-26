@@ -22,8 +22,6 @@
             <th>數量</th>
             <th>總計</th>
             <th>狀態</th>
-            {{-- <th>圖片</th> --}}
-            {{-- <th>使用者編號</th> --}}
             <th>功能</th>
         </tr>
     </thead>
@@ -40,8 +38,6 @@
             <td>{{$order->qty}}</td>
             <td>{{$order->total_price}}</td>
             <td>{{$statusName->status ?? ''}}</td>
-            {{-- <td>{{$order->img}}</td> --}}
-            {{-- <td>{{$order->user_id}}</td> --}}
             <td>
                 <a class= "btn btn-outline-primary btn-sm" href="/admin/order/edit/{{$order->id}}">編輯訂單狀態</a>
                 <a class= "btn btn-outline-danger btn-sm" href="/admin/order/destroy/{{$order->id}}">刪除訂單</a>
