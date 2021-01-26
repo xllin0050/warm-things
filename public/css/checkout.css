@@ -84,7 +84,6 @@ button:focus {
 
 /* Body/Header stuff */
 body {
-  padding: 50px;
   background-color: #ffffff;
 }
 
@@ -175,6 +174,7 @@ label {
 }
 
 .checkout {
+
   float: right;
   border: 0;
   margin-top: 20px;
@@ -186,6 +186,9 @@ label {
 
 .checkout:hover {
   background-color: #763134;
+  text-decoration: none;
+  color: #fff;
+
 }
 
 /* Make adjustments for tablet */
