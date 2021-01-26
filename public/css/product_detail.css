@@ -37,7 +37,21 @@ header .wrap .login {
     font-size: 48px;
     position: fixed;
     right: 40px;
-    bottom: 30vh;
+    bottom: 100px;
+
+}
+
+.cart_icon:hover .note_cart{
+    display: flex;
+}
+
+.note_cart {
+    display: none;
+    color:rgb(204, 88, 88);
+    position: fixed;
+    font-size: 18px;
+    right: 25px;
+    bottom: 70px;
 }
 
 .shopping_cart .qty{

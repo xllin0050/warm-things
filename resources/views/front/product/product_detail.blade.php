@@ -27,13 +27,16 @@
                     href="">餐盤器皿</a><span>-{{$products->name}}</span>
             </div>
 
-            <a href="/checkout">
+            <a class="cart_icon" href="/checkout">
                 <i class="fas fa-shopping-cart shopping_cart">
                     <?php
                     $getTotalQty=\Cart::getTotalQuantity();
                     ?>
                     <div class="qty">{{$getTotalQty}}</div>
                 </i>
+                <span class="note_cart">
+                    點我結帳
+                </span>
             </a>
 
             <div class="product_info">

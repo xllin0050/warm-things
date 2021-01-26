@@ -40,6 +40,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // $image = \Imgur::upload($request->file('img'));
+        // $product->img = $image->link();
+        // $product->save();
+
         $requestData = $request->all();
         
         if($request->hasFile('img')){
