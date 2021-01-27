@@ -17,7 +17,6 @@ class FrontController extends Controller
         return view('front.aboutus.index');
     }
 
-
     public function adultUtensils()
     {
         return view('front.adultutensils.index');
@@ -28,7 +27,6 @@ class FrontController extends Controller
     {
         return view('front.news.news');
     }
-
 
     public function newsShow()
     {
@@ -60,6 +58,7 @@ class FrontController extends Controller
     {
         $dt=Carbon::now();
         $order_number='DP'.$dt->year. $dt->month. $dt->day. $dt->hour. $dt->minute. $dt->second;
+        return redirect('/member');
 
 
         // 建立訂單

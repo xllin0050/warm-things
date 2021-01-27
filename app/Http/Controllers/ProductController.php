@@ -18,6 +18,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
+
         return view('admin.product.index',compact('products'));
     }
 
@@ -43,9 +44,10 @@ class ProductController extends Controller
         // $image = \Imgur::upload($request->file('img'));
         // $product->img = $image->link();
         // $product->save();
-
+   
         $requestData = Product::create($request->all());
-        
+
+
         if($request->hasFile('img')){
             $image = \Imgur::upload($request->file('img'));
             $requestData->img = $image->link();
@@ -53,7 +55,7 @@ class ProductController extends Controller
         }
 
         return redirect('/admin/product');
-        
+
     }
 
     /**
@@ -94,15 +96,15 @@ class ProductController extends Controller
         $item->name = $request->name;
         $item->price = $request->price;
         $item->description = $request->description;
-        
+
         if($request->hasFile('img')) {
             $image = \Imgur::upload($request->file('img'));
             $item->img = $image->link();
             $item->save();
         }
-    
 
-    
+
+
         return redirect('/admin/product');
     }
 
