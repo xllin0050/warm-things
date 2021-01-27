@@ -18,6 +18,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
+
         return view('admin.product.index',compact('products'));
     }
 
@@ -56,7 +57,7 @@ class ProductController extends Controller
         }
      
         return redirect('/admin/product');
-        
+
     }
 
     /**
@@ -91,31 +92,22 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    { 
-         //1.讀取舊檔案
-         $product = Product::find($id);
-         $product->type_id = $request->type_id;
-         $product->name = $request->name;
-         $product->price = $request->price;
-         $product->description = $request->description;
-         //2.判斷是否有新圖片
-         if($request->hasFile('img')){
-             // 判斷舊圖片檔案是否存在
-             if(file_exists(public_path().$product->img)){
-                 // 由於Stroage::delete() 判斷的根目錄與我們存取資料的位置不同
-                 // 故改成使用File::delete()
-                 File::delete(public_path().$product->img);
-             }
-             //儲存圖片取得路徑
-             $filePath = Storage::disk('public')->put('/images/product',$request->file('img'));
-             //更新圖片路徑
-             $product->img = Storage::url($filePath);
-         }
-         $product->save();
- 
-         
- 
-         return redirect('/admin/product');
+    {
+        $item = Product::find($id);
+        $item->type_id   = $request->type_id;
+        $item->name = $request->name;
+        $item->price = $request->price;
+        $item->description = $request->description;
+
+        if($request->hasFile('img')) {
+            $image = \Imgur::upload($request->file('img'));
+            $item->img = $image->link();
+            $item->save();
+        }
+
+
+
+        return redirect('/admin/product');
     }
 
     /**

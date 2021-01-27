@@ -39,7 +39,7 @@
 
         <div class="form-group">
             <label for="description">描述</label>
-            <div class="form-control" id="description" rows="3" name="description"></div>
+            <textarea class="form-control" id="description" rows="3" name="description"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">送出</button>

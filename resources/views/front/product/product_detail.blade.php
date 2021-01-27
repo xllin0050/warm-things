@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="product_introduction">
-                <div class="content_title">{{$products->description}}</div>
+                <div class="content_title">{!! $products->description !!}</div>
                 <div class="product_content">
                     Warmgrey Tail是一個來自韓國新進的設計品牌<br>
                     根據其自然風格的插圖創作各種商品<br>

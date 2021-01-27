@@ -105,7 +105,7 @@
                         <li><a href="">::關於我們::</a></li>
                         <li><a href="">::最新消息::</a></li>
                         <li><a href="">::線上購物::</a></li>
-                        <li><a href="">::會員專區::</a></li>
+                        <li><a href="/member">::會員專區::</a></li>
                     </ul>
                 </div>
                 <!-- 聯絡資訊 -->
