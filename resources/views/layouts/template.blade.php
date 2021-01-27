@@ -56,7 +56,7 @@
                         <a href="/product">::線上購物::</a>
                     </li>
                     <li>
-                        <a href="">::會員專區::</a>
+                        <a href="/member">::會員專區::</a>
                     </li>
                 </ul>
             </div>
