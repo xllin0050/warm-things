@@ -30,7 +30,6 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
   </div>
   <div class="product-details">
     <div class="product-title">{{$product->name}}</div>
-    <p class="product-description">{{$product->description}}</p>
   </div>
   <div class="product-price" data-price="{{$product->price}}">{{number_format($product->price)}}</div>
   <div class="product-quantity">
