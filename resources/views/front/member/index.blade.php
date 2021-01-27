@@ -61,7 +61,6 @@
                         <label for="inputName">姓名</label>
                         <input type="text" class="form-control" id="inputName" name="name" value="{{$user->name}}">
                     </div>
-                   
 
                     <div class="form-group col-md-6">
                         <label for="inputZip">郵遞區號</label>
@@ -82,26 +81,6 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCity"></label>
-                        {{-- <select id="inputCity" class="form-control" name="city">
-                            <option selected>台中市</option>
-                            <option>新北市</option>
-                            <option>臺北市</option>
-                            <option>桃園市</option>
-                            <option>臺南市</option>
-                            <option>高雄市</option>
-                            <option>新竹縣</option>
-                            <option>苗栗縣</option>
-                            <option>彰化縣</option>
-                            <option>南投縣</option>
-                            <option>雲林縣</option>
-                            <option>嘉義縣</option>
-                            <option>屏東縣</option>
-                            <option>宜蘭縣</option>
-                            <option>基隆市</option>
-                            <option>新竹市</option>
-                            <option>嘉義市</option>
-                        </select> --}}
                     </div>
 
                     <div class="form-group col-md-6">
@@ -120,7 +99,7 @@
                     <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="LabelCD">Modal title</h5>
+                        <h5 class="modal-title" id="LabelCD">資料更改</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
