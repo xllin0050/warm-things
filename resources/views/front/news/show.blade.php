@@ -36,7 +36,7 @@
                 <div class="text col-sm-12 col-md-6">
                     <p class="date">{{$inform->openingDate}}</p>
                     <p class="title">{{$inform->title}}</p>
-                    <p class="content">{{$inform->content}}
+                    <p class="content">{!!$inform->content!!}
                         
                     </p>
                 </div>
