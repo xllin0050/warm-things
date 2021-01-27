@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/00-template.css">
+    <link rel="stylesheet" href=" {{ asset('css/00-template.css') }}">
     @yield('css')
 </head>
 <body>
@@ -34,7 +34,7 @@
                         @csrf
                     </form>
                 @endguest
-              </div>
+            </div>
             <!-- 購物車 -->
             <div class="productCart">
                 <a href="/checkout">購物車</a>
@@ -42,7 +42,7 @@
             <!-- logo -->
 
             <div class="logo">
-                <a href="/"><img src="./img/00-template/logo.png" alt=""></a>
+                <a href="/"><img src="/img/00-template/logo.png" alt=""></a>
             </div>
             <!-- 選單 -->
             <div class="nav_btns">
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="footer_pic">
-                <img src="./img/00-template/bowl_dec.jpg" alt="">
+                <img src="/img/00-template/bowl_dec.jpg" alt="">
             </div>
         </section>
         <!-- 所有權 -->
