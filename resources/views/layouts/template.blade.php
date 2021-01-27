@@ -19,9 +19,22 @@
         <nav class="wrap">
             <!-- 登入/註冊 -->
             <div class="logLink">
-                <a class="log" href="">登入</a>
-                <a href="">/ 註冊</a>
-            </div>
+                @guest
+                    <a class="" href="{{ route('login') }}">{{ __('登入') }}</a>
+                    @if (Route::has('register'))
+                        <a class="" href="{{ route('register') }}">{{ __('/ 註冊') }}</a>
+                    @endif
+                @else
+                    <a class="" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('登出') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                @endguest
+              </div>
             <!-- 購物車 -->
             <div class="productCart">
                 <a href="/checkout">購物車</a>
