@@ -13,7 +13,6 @@
 
         <div class="form-group">
             <label for="type_id">類別</label>
-            {{-- <input type="number" class="form-control" id="type_id" name="type_id"> --}}
             <select class="form-control" class="form-control" id="type_id" name="type_id">
                 @foreach ($productTypes as $productType)
                 <option value={{$productType->id}}>

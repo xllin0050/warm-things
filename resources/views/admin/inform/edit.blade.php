@@ -29,11 +29,6 @@
             <input type="file" class="form-control" id="img" name="img">
         </div>
 
-        {{-- <div class="form-group">
-            <label for="imgs">副圖片</label>
-            <input type="file" class="form-control" id="imgs" name="imgs[]" multiple>
-        </div> --}}
-
         <div class="form-group">
             <label for="content">內文</label>
             <textarea class="form-control" id="content" rows="3" name="content">{{$inform->content}}</textarea>

@@ -42,8 +42,7 @@ class NewArrivalController extends Controller
         $requestData = NewArrival::get($request->all());
         
         if($request->hasFile('img')){
-            $image = \Imgur::upload($request->file('img'));
-            $requestData->img = $image->link();
+            $requestData->img =$request->img;
             $requestData->save();
         }
 
@@ -91,8 +90,7 @@ class NewArrivalController extends Controller
         $item->content=$request->content;
 
         if($request->hasFile('img')) {
-            $image = \Imgur::upload($request->file('img'));
-            $item->img = $image->link();
+            $item->img = $request->img;
             $item->save();
         }
     

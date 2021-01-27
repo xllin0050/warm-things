@@ -12,7 +12,6 @@
         
         <div class="form-group">
             <label for="type_id">類別</label>
-            {{-- <input type="number" class="form-control" id="type_id" name="type_id"> --}}
             <select class="form-control" class="form-control" id="type_id" name="type_id">
                 @foreach ($productTypes as $productType)
                 <option value={{$productType->id}}>
@@ -34,18 +33,13 @@
 
         <div class="form-group">
             <label for="img">商品圖片</label>
-            <img src="{{secure_asset($product->img)}}" alt="" width="200px">
+            <img src="{{$product->img}}" alt="" width="200px">
         </div>
 
         <div class="form-group">
             <label for="img">更換圖片</label>
             <input type="file" class="form-control" id="img" name="img">
         </div>
-
-        {{-- <div class="form-group">
-            <label for="imgs">副圖片</label>
-            <input type="file" class="form-control" id="imgs" name="imgs[]" multiple>
-        </div> --}}
 
         <div class="form-group">
             <label for="description">描述</label>

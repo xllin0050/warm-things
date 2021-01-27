@@ -26,7 +26,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
 <?php $product = App\Product::find($cart->id);?>
 <div class="product">
   <div class="product-image">
-    <img src="{{secure_asset($product->img)}}">
+    <img src="{{$product->img}}">
   </div>
   <div class="product-details">
     <div class="product-title">{{$product->name}}</div>

@@ -25,7 +25,7 @@
                 <td>{{$inform->openingDate}}</td>
                 <td>{{$inform->closingDate}}</td>
                 <td>{{$inform->content}}</td>
-                <td><img src=" {{secure_asset($inform->img)}}" alt=""></td>
+                <td><img src="{{$inform->img}}" alt=""></td>
                 <td>{{$inform->name}}</td>
                 <td>
                     <div class="btn-group">

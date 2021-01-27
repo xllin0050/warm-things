@@ -38,12 +38,11 @@ class InformController extends Controller
      */
     public function store(Request $request)
     {
-        $requestData = Inform::create($request->all());
+        $Informs = Inform::create($request->all());
         
         if($request->hasFile('img')){
-            $image = \Imgur::upload($request->file('img'));
-            $requestData->img = $image->link();
-            $requestData->save();
+            $Informs->img =$request->img;
+            $Informs->save();
         }
 
         return redirect('/admin/inform');
@@ -87,10 +86,9 @@ class InformController extends Controller
         $requestData->openingDate = $request->openingDate;
         $requestData->closingDate = $request->closingDate;
         $requestData->content = $request->content;
-
+        
         if($request->hasFile('img')) {
-            $image = \Imgur::upload($request->file('img'));
-            $requestData->img = $image->link();
+            $requestData->img = $request->img;
             $requestData->save();
         }
     
