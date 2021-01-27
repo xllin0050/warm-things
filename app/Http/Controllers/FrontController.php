@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use App\Product;
+use App\NewArrival;
 use App\ProductType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -25,7 +26,8 @@ class FrontController extends Controller
 
     public function newsProduct()
     {
-        return view('front.news.news');
+        $newArrivals= NewArrival::get();
+        return view('front.news.news', compact('newArrivals'));
     }
 
     public function newsShow()
