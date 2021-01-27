@@ -39,14 +39,13 @@ class NewArrivalController extends Controller
      */
     public function store(Request $request)
     {
-        $requestData = NewArrival::get($request->all());
+        $requestData = NewArrival::create($request->all());
         
         if($request->hasFile('img')){
-            $requestData->img =$request->img;
+            $filePath = Storage::disk('public')->put('/images/product',$request->file('img'));
+            $requestData->img = Storage::url($filePath);
             $requestData->save();
         }
-
-        NewArrival::create($requestData);
 
         return redirect('/admin/new_arrival');
 
@@ -90,7 +89,8 @@ class NewArrivalController extends Controller
         $item->content=$request->content;
 
         if($request->hasFile('img')) {
-            $item->img = $request->img;
+            $filePath = Storage::disk('public')->put('/images/product',$request->file('img'));
+            $item->img = Storage::url($filePath);
             $item->save();
         }
     

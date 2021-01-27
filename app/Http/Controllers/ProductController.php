@@ -97,7 +97,11 @@ class ProductController extends Controller
         $item->description = $request->description;
 
         if($request->hasFile('img')) {
-            $item->img = $request->img;
+             //disk 指定位置
+            //put 存放檔案
+            $filePath = Storage::disk('public')->put('/images/product',$request->file('img'));
+            //更新產品資料中的img
+            $item->img = Storage::url($filePath);
             $item->save();
         }
 
