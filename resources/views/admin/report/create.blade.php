@@ -1,6 +1,7 @@
 @extends('layouts.admin_app')
 
 @section('css')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endsection
 
 @section('main')
@@ -19,8 +20,8 @@
             </div>
             <div class="form-group">
                 <label for="content">內文</label>
-                <input type="text" class="form-control" id="content" name="content">
-            </div>
+                <textarea type="text" class="form-control" id="content" name="content">
+            </textarea>
             <div class="form-group">
                 <label for="img">圖片</label>
                 <input type="file" class="form-control" id="img" name="img">
@@ -35,5 +36,15 @@
 @endsection
 
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+
+    $('#content').summernote({
+        placeholder: '請輸入商品描述',
+        tabsize: 2,
+        height: 100
+    });
+</script>
+
 
 @endsection

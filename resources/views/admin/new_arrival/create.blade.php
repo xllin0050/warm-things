@@ -20,8 +20,8 @@
             </div>
             <div class="form-group">
                 <label for="content">內文</label>
-                <input type="text" class="form-control" id="content" name="content">
-            </div>
+                <textarea type="text" class="form-control" id="content" name="content">
+            </textarea>
             <div class="form-group">
                 <label for="img">圖片</label>
                 <input type="file" class="form-control" id="img" name="img">
