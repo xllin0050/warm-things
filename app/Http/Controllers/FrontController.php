@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Inform;
 use App\Order;
 use App\Product;
 use App\NewArrival;
@@ -32,7 +33,9 @@ class FrontController extends Controller
 
     public function newsShow()
     {
-        return view('front.news.show');
+        $informs = Inform::get();
+        
+        return view('front.news.show', compact('informs'));
     }
 
 

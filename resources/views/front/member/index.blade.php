@@ -58,12 +58,32 @@
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
+                        <label for="inputName">姓名</label>
+                        <input type="text" class="form-control" id="inputName" name="name" value="{{$user->name}}">
+                    </div>
+                   
+
+                    <div class="form-group col-md-6">
+                        <label for="inputZip">郵遞區號</label>
+                        <input type="text" class="form-control" id="inputZip" name="zip" value="{{$user->zip}}">
+                    </div>
+                    
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
                         <label for="inputEmail4">電子郵件</label>
                         <input type="email" class="form-control" id="inputEmail4" name="email" value="{{$user->email}}">
                     </div>
+
                     <div class="form-group col-md-6">
-                        <label for="inputCity">縣市</label>
-                        <select id="inputCity" class="form-control" name="city">
+                        <label for="inputAddress">地址</label>
+                        <input type="text" class="form-control" id="inputAddress" name="address" value="{{$user->address}}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity"></label>
+                        {{-- <select id="inputCity" class="form-control" name="city">
                             <option selected>台中市</option>
                             <option>新北市</option>
                             <option>臺北市</option>
@@ -81,24 +101,9 @@
                             <option>基隆市</option>
                             <option>新竹市</option>
                             <option>嘉義市</option>
-                        </select>
+                        </select> --}}
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputName">姓名</label>
-                        <input type="text" class="form-control" id="inputName" name="name" value="{{$user->name}}">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputAddress">街道地址</label>
-                        <input type="text" class="form-control" id="inputAddress" name="address" value="{{$user->address}}">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputZip">郵遞區號</label>
-                        <input type="text" class="form-control" id="inputZip" name="zip" value="{{$user->zip}}">
-                    </div>
+
                     <div class="form-group col-md-6">
                         <label for="inputPhone">電話</label>
                         <input type="text" class="form-control" id="inputPhone" name="phone" value="{{$user->phone}}">
@@ -145,62 +150,60 @@
             <div class="font-weight">動作</div>
         </li>
     @foreach ($orders as $order)
-    @php
-    $statusName = App\OrderStatus::find($order->order_status);
-    @endphp
+        @php
+        $statusName = App\OrderStatus::find($order->order_status);
+        @endphp
+
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <div class="col-3">{{$order->order_number}}</div>
+
             <div class="col-3">{{$order->created_at->format('Y-m-d')}}</div>
             <div class="col-2">{{$order->total_price}}</div>
             <div class="col-2">{{$statusName->status ?? ''}}</div>
 
-
             <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Order_{{$order->id}}">
-        查看詳細
-        </button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Order_{{$order->id}}">
+            查看詳細
+            </button>
   
-  <!-- Modal -->
-  <div class="modal fade" id="Order_{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="ModalLabelOrder_{{$order->id}}" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="ModalLabelOrder_{{$order->id}}">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          
-            <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">品名</th>
-                    <th scope="col">單價</th>
-                    <th scope="col">數量</th>
-                    <th scope="col">總計</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">{{$order->id}}</th>
-                    <td>{{$order->name}}</td>
-                    <td>{{$order->price}}</td>
-                    <td>{{$order->qty}}</td>
-                    <td>{{$order->total_price}}</td>
-                  </tr>
-                </tbody>
-              </table>
-
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+            <!-- Modal -->
+            <div class="modal fade" id="Order_{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="ModalLabelOrder_{{$order->id}}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabelOrder_{{$order->id}}">訂單詳細</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">品名</th>
+                                    <th scope="col">單價</th>
+                                    <th scope="col">數量</th>
+                                    <th scope="col">總計</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">{{$order->id}}</th>
+                                    <td>{{$order->name}}</td>
+                                    <td>{{$order->price}}</td>
+                                    <td>{{$order->qty}}</td>
+                                    <td>{{$order->total_price}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+            </div>
         </li>    
     @endforeach
         </ul>

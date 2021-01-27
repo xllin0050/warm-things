@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use App\OrderStatus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -61,7 +62,10 @@ class OrderController extends Controller
     {
         $order = Order::find($id);
         $orderStatus = OrderStatus::get();
-        return view('admin.order.edit',compact('order','orderStatus'));
+        $user = Auth::user();
+
+        
+        return view('admin.order.edit',compact('order','orderStatus','user'));
         
     }
 
