@@ -74,6 +74,10 @@ button:focus {
   zoom: 1;
 }
 
+#cart-shipping:before{
+ content:'';
+}
+
 /* Apply clearfix in a few places */
 /* Apply dollar signs */
 .product .product-price:before,

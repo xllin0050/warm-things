@@ -14,7 +14,7 @@
 @extends('layouts.template')
 {{-- <title>商品目錄</title> --}}
 @section('css')
-<link rel="stylesheet" href="/css/04-product_index.css">
+<link rel="stylesheet" href="{{ asset('css/04-product_index.css')}}">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 @endsection
 
@@ -59,6 +59,6 @@
 </section>
 @endsection
 
-    @section('js')
+@section('js')
 
-    @endsection
+@endsection

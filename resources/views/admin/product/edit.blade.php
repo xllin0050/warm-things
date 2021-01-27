@@ -44,7 +44,7 @@
 
         <div class="form-group">
             <label for="description">描述</label>
-            <textarea class="form-control" id="description" rows="3" name="description">{{$product->description}}</textarea>
+            <textarea class="form-control" id="description" rows="3" name="description">{!!$product->description!!}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">送出</button>

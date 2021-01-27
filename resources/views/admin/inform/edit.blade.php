@@ -31,7 +31,7 @@
 
         <div class="form-group">
             <label for="content">內文</label>
-            <textarea class="form-control" id="content" rows="3" name="content">{{$inform->content}}</textarea>
+            <textarea class="form-control" id="content" rows="3" name="content">{!!$inform->content!!}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">送出</button>

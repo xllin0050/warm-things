@@ -34,11 +34,11 @@
             </div>
             <div class="form-group row">
                 <label class="col-2" for="content">內文</label>
-                <textarea type="text" class="form-control col-10" id="content" name="content" value="{{$newArrivals->content}}"required>
+                <textarea type="text" class="form-control col-10" id="content" name="content" value="{!!$newArrivals->content!!}"required>
             </textarea>
             <div class="form-group row">
                 <label class="col-2" for="img">目前圖片</label>
-                <img src="{{secure_asset($newArrival->img)}}" alt="" width="200">
+                <img src="{{secure_asset($newArrivals->img)}}" alt="" width="200">
             </div>
             <div class="form-group row">
                 <label class="col-2" for="img">重新上傳圖片</label>
