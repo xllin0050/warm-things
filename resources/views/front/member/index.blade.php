@@ -91,17 +91,17 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputAddress">街道地址</label>
-                        <input type="text" class="form-control" id="inputAddress" name="address">
+                        <input type="text" class="form-control" id="inputAddress" name="address" value="{{$user->address}}">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputZip">郵遞區號</label>
-                        <input type="text" class="form-control" id="inputZip" name="zip">
+                        <input type="text" class="form-control" id="inputZip" name="zip" value="{{$user->zip}}">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPhone">電話</label>
-                        <input type="text" class="form-control" id="inputPhone" name="phone">
+                        <input type="text" class="form-control" id="inputPhone" name="phone" value="{{$user->phone}}">
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary">確定</button>
+                        <button type="submit" class="btn btn-primary">確定</button>
                         </div>
                     </div>
                     </div>
