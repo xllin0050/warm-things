@@ -11,8 +11,20 @@
         @csrf
         
         <div class="form-group">
-            <label for="name">訂單編號</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{$order->order_number}}" readonly>
+            <label for="order_number">訂單編號</label>
+            <input type="text" class="form-control" id="order_number" name="order_number" value="{{$order->order_number}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="name">客戶姓名</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{$order->name}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="qty">數量</label>
+            <input type="text" class="form-control" id="qty" name="qty" value="{{$order->qty}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="price">總價</label>
+            <input type="text" class="form-control" id="price" name="price" value="{{$order->price}}" readonly>
         </div>
         
         <div class="form-group">

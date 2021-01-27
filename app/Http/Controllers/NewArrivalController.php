@@ -42,7 +42,7 @@ class NewArrivalController extends Controller
         $requestData = NewArrival::create($request->all());
         
         if($request->hasFile('img')){
-            $filePath = Storage::disk('public')->put('/images/product',$request->file('img'));
+            $filePath = Storage::disk('public')->put('/images/NewArrival',$request->file('img'));
             $requestData->img = Storage::url($filePath);
             $requestData->save();
         }

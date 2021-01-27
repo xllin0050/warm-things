@@ -56,12 +56,12 @@
                             </div>
                         </div>
                         {{-- 媒體報導 --}}
-                        <div class="btn-group ml-2">
+                        {{-- <div class="btn-group ml-2">
                             <a href="/admin/report"><button type="button" class="btn btn-outline-dark" aria-haspopup="true" aria-expanded="false">
                             媒體報導
                             </button>
                             </a>
-                        </div>
+                        </div> --}}
                         <div class="btn-group ml-2">
                             <a href="/admin/order"><button type="button" class="btn btn-outline-dark" aria-haspopup="true" aria-expanded="false">
                             訂單管理

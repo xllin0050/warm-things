@@ -34,7 +34,7 @@
         <div id="#productItems" class="card_wrap">
             @foreach ($products as $product)
             <div class="product_card" id="{{$product->type_id}}">
-                <div class="card_img" style="background-image: url('{{$product->img}}')"></div>
+                <a href="/product/product_detail/{{$product->id}}"><div class="card_img" style="background-image: url('{{$product->img}}')"></div></a>
                 <div class="product_body">
                     <h2 class="product_title"><a href="/product/product_detail/{{$product->id}}">【{{$product->name}}】</a></h2>
                     <p class="product_price">售價${{$product->price}}</p>

@@ -1,79 +1,108 @@
 管理者樣板 admin_app
-    商品列表連結 []
-    商品分類列表連結 []
-    新品上市消息列表連結 []
-    展覽公告消息列表連結 []
-    訂單列表連結 []
+    商品列表連結 [o]
+    商品分類列表連結 [o]
+    新品上市消息列表連結 [o]
+    展覽公告消息列表連結 [o]
+    訂單列表連結 [o]
     
 product 商品
-    migration[0]
-    model[0]
-    controller[0]
-    |-index[0]
-    |-create[0]
-    |-store[0]
-    |-edit[0]
-    |-update[0]
-    |-destroy[0]
-    routes[0]
+    migration       [o]
+    model           [o]
+    view    
+        |-index     [o]
+        |-edit      [o]
+        |-create    [o]
+    controller      
+        |-index     [o]
+        |-create    [o]
+        |-store     [o]
+        |-edit      [o]
+        |-update    [o]
+        |-destroy   [o]
+    routes          [o]
     
 
 product type 商品分類
-    migration[]
-    model[]
-    controller[]
-    |-index[]
-    |-create[]
-    |-store[]
-    |-edit[]
-    |-update[]
-    |-destroy[]
-    routes[]
+    migration       [o]
+    model           [o]
+    view    
+        |-index     [o]
+        |-edit      [o]
+        |-create    [o]
+    controller      
+        |-index     [o]
+        |-create    [o]
+        |-store     [o]
+        |-edit      [o]
+        |-update    [o]
+        |-destroy   [o]
+    routes          [o]
 
-news product 新品上市
-    migration[]
-    model[]
-    controller[]
-    |-index[]
-    |-create[]
-    |-store[]
-    |-edit[]
-    |-update[]
-    |-destroy[]
-    routes[]
+news_arrival 新品上市
+    migration       [o]
+    model           [o]
+    view    
+        |-index     [o]
+        |-edit      [o]
+        |-create    [o]
+    controller      
+        |-index     [o]
+        |-create    [o]
+        |-store     [o]
+        |-edit      [o]
+        |-update    [o]
+        |-destroy   [o]
+    routes          [o]
 
-news show 展覽公告
-    migration[]
-    model[]
-    controller[]
-    |-index[]
-    |-create[]
-    |-store[]
-    |-edit[]
-    |-update[]
-    |-destroy[]
-    routes[]
+inform 展覽公告
+    migration       [O]
+    model           [O]
+    view    
+        |-index     [O]
+        |-edit      [O]
+        |-create    [O]
+    controller      
+        |-index     [o]
+        |-create    [o]
+        |-store     [o]
+        |-edit      [o]
+        |-update    [o]
+        |-destroy   [o]
+    routes          [o]
 
-member 會員
-    migration[]
-    model[]
-    controller[]
-    |-index[]
-    |-create[]
-    |-store[]
-    |-edit[]
-    |-update[]
-    |-destroy[]
-    routes[]
 
 order 訂單
-    migration[]
-    model[]
-    controller[]
-    |-index[]
-    |-create[]
-    |-store[]
-    |-edit[]
-    |-update[]
-    |-destroy[]
-    routes[]
+    migration       [O]
+    model           [O]
+    view    
+        |-index     [O]
+        |-edit      [O]
+
+    controller      
+        |-index     [O]
+        |-create    [O] ->後端不需要新增訂單的能力(別忘記串前端) 
+        |-store     [O] ->已寫在FrontController裡面
+        |-edit      [O]
+        |-update    [O]
+        |-destroy   [O]
+    routes          [O]
+
+order status 訂單狀態
+    migration       [O]
+    model           [O]
+
+member 會員
+    migration       [O]
+    model           [O]
+    view    
+        |-index     [O] ->/member
+        |-edit      [O] ->/member
+        |-create    [O] ->/login
+    controller      
+        |-index     [O] 
+        |-create    [O] 
+        |-store     [O]
+        |-edit      [X] ->同index頁
+        |-update    [O]
+        |-destroy   [X] ->無刪除功能
+    routes          [o]
