@@ -38,7 +38,7 @@
             </textarea>
             <div class="form-group row">
                 <label class="col-2" for="img">目前圖片</label>
-                <img src="{{secure_asset($newArrivals->img)}}" alt="" width="200">
+                <img src="{{$newArrivals->img}}" alt="" width="200">
             </div>
             <div class="form-group row">
                 <label class="col-2" for="img">重新上傳圖片</label>
