@@ -35,7 +35,7 @@
         </div>
         <div class="product_selection">
             <div class="product_title">{{$products->name}}</div>
-            <div class="product_price"><span>{{$products->price}}</span></div>
+            <div class="product_price"><span>NT${{$products->price}}</span></div>
             {{-- <div class="product_thumbnail item">
                 <img src="./img/04-product_detail/Warmgrey Tail 生活設計展-1 布商品.jpg" alt="產品縮圖">
                 <img src="./img/04-product_detail/Warmgrey Tail 生活設計展-1 布商品.jpg" alt="產品縮圖">
