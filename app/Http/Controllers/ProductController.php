@@ -51,9 +51,6 @@ class ProductController extends Controller
             //更新產品資料中的img
             $product->img = Storage::url($filePath);
             $product->save();
-        }else{
-            $product->img = '/images/noimg.jpg';
-            $product->save();
         }
      
         return redirect('/admin/product');
@@ -100,8 +97,7 @@ class ProductController extends Controller
         $item->description = $request->description;
 
         if($request->hasFile('img')) {
-            $image = \Imgur::upload($request->file('img'));
-            $item->img = $image->link();
+            $item->img = $request->img;
             $item->save();
         }
 
