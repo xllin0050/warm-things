@@ -90,22 +90,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item = Product::find($id);
-        $item->type_id   = $request->type_id;
-        $item->name = $request->name;
-        $item->price = $request->price;
-        $item->description = $request->description;
+        $product = Product::find($id);
+        $product->type_id = $request->type_id;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
 
         if($request->hasFile('img')) {
              //disk 指定位置
             //put 存放檔案
             $filePath = Storage::disk('public')->put('/images/product',$request->file('img'));
             //更新產品資料中的img
-            $item->img = Storage::url($filePath);
-            $item->save();
+            $product->img = Storage::url($filePath);
         }
 
-
+        $product->save();
 
         return redirect('/admin/product');
     }

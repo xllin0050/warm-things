@@ -38,14 +38,14 @@ class InformController extends Controller
      */
     public function store(Request $request)
     {
-        $informs = Inform::create($request->all());
+        $inform = Inform::create($request->all());
         
         if($request->hasFile('img')){
 
             $filePath = Storage::disk('public')->put('/images/product',$request->file('img'));
 
-            $informs->img = Storage::url($filePath);
-            $informs->save();
+            $inform->img = Storage::url($filePath);
+            $inform->save();
         }
 
         return redirect('/admin/inform');

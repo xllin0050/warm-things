@@ -58,9 +58,6 @@ class FrontController extends Controller
     {
         $dt=Carbon::now();
         $order_number='DP'.$dt->year. $dt->month. $dt->day. $dt->hour. $dt->minute. $dt->second;
-        return redirect('/member');
-
-
         // 建立訂單
 
         $cartCollection=\Cart::getContent();
@@ -76,12 +73,13 @@ class FrontController extends Controller
                     'img'=>$product->img,
                     'total_price'=>\Cart::getTotal(),
                     'order_number'=>$order_number,
+                    'order_status'=>1,
                 ]);
 
         }
 
         \Cart::clear();
-        return redirect('/member/{id}');
+        return redirect('/member');
 
 
 
