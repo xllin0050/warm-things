@@ -34,7 +34,7 @@
             </div>
             <div class="form-group row">
                 <label class="col-2" for="content">內文</label>
-                <textarea type="text" class="form-control col-10" id="content" name="content" value="{{$reports->content}}"required>
+                <textarea type="text" class="form-control col-10" id="content" name="content" value="{!!$reports->content!!}"required>
             </textarea>
             <div class="form-group row">
                 <label class="col-2" for="img">目前圖片</label>

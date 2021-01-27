@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.template')
 
-<head>
-    <meta charset="UTF-8">
+@section('css')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品內頁</title>
+
     <!-- swiper -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="{{ asset('css/product_detail.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/04-product_detail.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <style>
 
-    </style>
-</head>
+@endsection
 
-<body>
-    <main>
+@section('main')
 
         <section class="wrap">
 
@@ -69,9 +63,10 @@
                 </div>
             </div>
             <div class="product_introduction">
-                <div class="content_title">{!! $products->description !!}</div>
+                <div class="content_title">商品介紹</div>
                 <div class="product_content">
-                    Warmgrey Tail是一個來自韓國新進的設計品牌<br>
+                    {!! $products->description !!}
+                    {{-- Warmgrey Tail是一個來自韓國新進的設計品牌<br>
                     根據其自然風格的插圖創作各種商品<br>
                     由插畫家Kim Han-geol和藝術總監Lee Hyuna成立該品牌<br>
                     在短短三年多的時光<br>
@@ -82,7 +77,7 @@
                     因為它們讓人想起童話故事中的場景<br>
                     無論是在家中還是在辦公室<br>
                     無論環境如何<br>
-                    他們的插圖都能營造出平靜的效果<br>
+                    他們的插圖都能營造出平靜的效果<br> --}}
                 </div>
                 <div class="product_imgs">
                     <img src="./img/04-product_detail/Warmgrey Tail 生活設計展-1 布商品.jpg" alt="">
@@ -93,8 +88,12 @@
             </div>
 
         </section>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="  crossorigin="anonymous"></script>
+
+@endsection
+
+@section('js')
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="  crossorigin="anonymous"></script>
+
     <script>
         var addCartBtn = document.querySelector('.addchart_btn');
 
@@ -109,8 +108,6 @@
 
             var formData = new FormData;
 
-
-
             formData.append('id',id);
             formData.append('_token',_token);
             formData.append('qty',qty);
@@ -124,7 +121,6 @@
                     return response.text()
                 })
 
-
                 .then(function(data){
                     console.log('成功',data);
                     if(data == "false"){
@@ -137,8 +133,6 @@
                 .catch(function(error){
                     console.log('錯誤',error);
                 })
-
-
         };
 
         var add_down= document.querySelector('.add_down');
@@ -160,6 +154,4 @@
         }
     </script>
 
-</body>
-
-</html>
+@endsection
