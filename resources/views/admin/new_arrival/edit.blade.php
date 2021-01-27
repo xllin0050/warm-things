@@ -1,6 +1,7 @@
 @extends('layouts.admin_app')
 
 @section('css')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <style>
         .image_area{
             position: relative;
@@ -33,8 +34,8 @@
             </div>
             <div class="form-group row">
                 <label class="col-2" for="content">內文</label>
-                <input type="text" class="form-control col-10" id="content" name="content" value="{{$newArrivals->content}}"required>
-            </div>
+                <textarea type="text" class="form-control col-10" id="content" name="content" value="{{$newArrivals->content}}"required>
+            </textarea>
             <div class="form-group row">
                 <label class="col-2" for="img">目前圖片</label>
                 <img src="{{secure_asset($newArrival->img)}}" alt="" width="200">
@@ -50,5 +51,14 @@
 @endsection
 
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+
+    $('#content').summernote({
+        placeholder: '請輸入商品描述',
+        tabsize: 2,
+        height: 100
+    });
+</script>
 
 @endsection

@@ -1,7 +1,8 @@
 @extends('layouts.admin_app')
 
 @section('css')
-    
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
 @endsection
 @section('main')
 <div class="container py-5">
@@ -9,7 +10,7 @@
     <hr>
     <form action="/admin/product/update/{{$product->id}}" method="POST" enctype="multipart/form-data">
         @csrf
-        
+
         <div class="form-group">
             <label for="type_id">類別</label>
             <select class="form-control" class="form-control" id="type_id" name="type_id">
@@ -52,5 +53,14 @@
 </div>
 @endsection
 @section('js')
-    
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+
+    $('#description').summernote({
+        placeholder: '請輸入商品描述',
+        tabsize: 2,
+        height: 100
+      });
+</script>
+
 @endsection
