@@ -16,7 +16,11 @@
         </div>
         <div class="form-group">
             <label for="name">客戶姓名</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{$order->name}}" readonly>
+            <input type="text" class="form-control" id="name" name="name" value="{{$user->name}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="name">客戶電話</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{$user->phone}}" readonly>
         </div>
         <div class="form-group">
             <label for="qty">數量</label>
